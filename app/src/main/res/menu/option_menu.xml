@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_contact_us"
+        android:title="Contact Us"/>
+
+    <item
+        android:id="@+id/menu_about_us"
+        android:title="About Us"/>
+    <item
+        android:id="@+id/menu_notice"
+        android:title="Notice"/>
+    <item
+        android:id="@+id/menu_wardactivity"
+        android:title="Wards"/>
+
+    <item android:id="@+id/menu_programactivity"
+          android:title="Program"/>
+
+</menu>

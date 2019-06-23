@@ -1,0 +1,131 @@
+<resources>
+    <string name="app_name">ChauriDeurali Municipality</string>
+    <string name="email_address">ito.chaurideuralimun@gmail.com</string>
+    <string name="website">http://chaurideuralimun.gov.np</string>
+    <string name="facebook_link">https://www.facebook.com/chaurideuralimun</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="sachib">वडा सचिवः</string>
+
+    <!--mayor details-->
+    <string name="mayor">दिननाथ गौतम</string>
+    <string name="chairman">अध्यक्ष</string>
+    <string name="mayor_phonenmber">९८५१२४३०७१</string>
+
+    <!--vice mayor details-->
+    <string name="vicemayor">तारा कुमारी चौलागाईं</string>
+    <string name="vicechairman">उपाध्यक्ष</string>
+    <string name="vicechairman_phnoenumber">९८५१२४३०८१</string>
+    <!--wards name-->
+    <string name="ward1">सानो वाङथली</string>
+    <string name="ward2">नाग्रे गगर्चे</string>
+    <string name="ward3">माझीफेदा</string>
+    <string name="ward4">धुसेनी </string>
+    <string name="ward5">पोखरीचौंंरी</string>
+    <string name="ward6">कात्तिके देउराली</string>
+    <string name="ward7">मादन कुडाँरी</string>
+    <string name="ward8">विर्ता देउराली</string>
+    <string name="ward9">गोठपानी</string>
+
+    <!--ward one details-->
+    <string name="profile_1">राजु आले तामाङ</string>
+    <string name="profile_12">पेम्बा सिंह तामाङ</string>
+    <string name="profile_13">चन्द्रमान तामाङ</string>
+    <string name="ward_1_name">वडा नं. १ सानो वाङथली</string>
+    <string name="ward_1_personal_contact_number">रामचन्द्र अधिकारी ९८४१०५७६४७</string>
+    <string name="ward_1_population">१५०९</string>
+    <string name="ward_1_contact_number">९८५१२१२३४५</string>
+    <string name="lan1">----</string>
+    <string name="lon1">----</string>
+
+    <!--ward 2 details-->
+    <string name="profile_2">दिनेश लामा</string>
+    <string name="profile_22">देव बहादुर प्रधान</string>
+    <string name="profile_23">छत्र बहादुर प्रधान</string>
+    <string name="ward_2_name">वडा नं. २ नाग्रे गगर्चे</string>
+    <string name="ward_2_personal_contact_number">वडा सचिवः राम कृपाल महतो -९८४१४६५२८७</string>
+    <string name="ward_2_population">१५०९</string>
+    <string name="ward_2_contact_number">९८१८०३२१६०</string>
+    <string name="lan2">27.6021N</string>
+    <string name="lon2">85.8568E</string>
+
+    <!--ward three details-->
+    <string name="profile_3">विनोद घिसिङ</string>
+    <string name="profile_32">भोज बहादुर गौतम</string>
+    <string name="profile_33">चित्र प्रसाद चौलागाई</string>
+    <string name="ward_3_name">वडा नं. ३ माझीफेदा</string>
+    <string name="ward_3_personal_contact_number">वडा सचिवः राम कृपाल महतो -९८४१४६५२८७</string>
+    <string name="ward_3_population">२६६९</string>
+    <string name="ward_3_contact_number">९८५११००२५२</string>
+    <string name="lan3">27.5902N</string>
+    <string name="lon3"> 85.8339E</string>
+
+
+    <!--ward 4 details-->
+    <string name="profile_4">सुरेश कुमार लामा</string>
+    <string name="profile_42">नविन गौतम</string>
+    <string name="profile_43">दिलिप लामा</string>
+    <string name="ward_4_name">वडा नं. ४ धुसेनी</string>
+    <string name="ward_4_personal_contact_number">वडा सचिवः मोहन प्रसाद दाहाल - ९८४०४४२९६३</string>
+    <string name="ward_4_population">२०५०</string>
+    <string name="ward_4_contact_number">९८५१०५००१६</string>
+    <string name="lan4">27.5992N</string>
+    <string name="lon4"> 85.7978E</string>
+
+    <!--ward five details-->
+    <string name="profile_5">राज कुमार गौतम</string>
+    <string name="profile_52">बाबुराम चौलागाई</string>
+    <string name="profile_53">छत्र बहादुर कोइराला</string>
+    <string name="ward_5_name">वडा नं. ५ पोखरीचौंंरी</string>
+    <string name="ward_5_personal_contact_number">वडा सचिवः निरञ्‍जन प्रसाद पोखरेल - ९८४९७३१३०१</string>
+    <string name="ward_5_population">३६०३</string>
+    <string name="ward_5_contact_number">९८४९२६२९५०</string>
+
+    <string name="lan5">27.5779N</string>
+    <string name="lon5"> 85.8009E</string>
+
+    <!--ward 6 detaisl-->
+    <string name="profile_6">रेशम प्रसाद चौंलागाईं</string>
+    <string name="profile_62">होम प्रसाद दुलाल</string>
+    <string name="profile_63">राजेन्द्र प्रसाद वास्कोटा</string>
+    <string name="ward_6_name">वडा नं. ६</string>
+    <string name="ward_6_personal_contact_number">वडा सचिवः कपिलदेव दाहाल - ९८४१७४९४२६</string>
+    <string name="ward_6_population">३०६१</string>
+    <string name="ward_6_contact_number">९८४११००४५६</string>
+    <string name="lan6">27.5562N</string>
+    <string name="lon6"> 85.8024E</string>
+
+    <!--ward 7 detaisl-->
+    <string name="profile_7">रविरवल लामा</string>
+    <string name="profile_72">झम्क बहादुर गौतम</string>
+    <string name="profile_73">ङेमा लामा</string>
+    <string name="ward_7_name">वडा नं. ७ मादन कुडाँरी</string>
+    <string name="ward_7_personal_contact_number">वडा सचिवः निरञ्‍जन प्रसाद पोखरेल - ९८४९७३१३०१</string>
+    <string name="ward_7_population">१८९७</string>
+    <string name="ward_7_contact_number">९८४१२०३२४१</string>
+    <string name="lan7">27.5290N</string>
+    <string name="lon7"> 85.8029E</string>
+
+    <!--ward 8 details-->
+    <string name="profile_8">धन बहादुर तामाङ</string>
+    <string name="profile_82">रमला पन्त</string>
+    <string name="profile_83">उद्धव प्रसाद चौलागाई</string>
+    <string name="ward_8_name">वडा नं. ८ विर्ता देउराली</string>
+    <string name="ward_8_personal_contact_number">वडा सचिवः रामचन्द्र अधिकारी -९८४१०५७६४७</string>
+    <string name="ward_8_population">२२७२</string>
+    <string name="ward_8_contact_number">९८५११७६६३८</string>
+    <string name="lan8">27.5671N</string>
+    <string name="lon8"> 85.7460E</string>
+
+    <!--ward nine details-->
+    <string name="profile_9">राम बहादुर लामा</string>
+    <string name="profile_92">पासाङ लामा</string>
+    <string name="profile_93">नारायण प्रसाद चौलागाई</string>
+    <string name="ward_9_name">वडा नं. ९ गोठपानी</string>
+    <string name="ward_9_personal_contact_number">वडा सचिवः</string>
+    <string name="ward_9_population">१५३१</string>
+    <string name="ward_9_contact_number">९८१३७६७१६८</string>
+
+</resources>
