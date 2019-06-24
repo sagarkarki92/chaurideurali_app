@@ -45,7 +45,7 @@
     <string name="profile_22">देव बहादुर प्रधान</string>
     <string name="profile_23">छत्र बहादुर प्रधान</string>
     <string name="ward_2_name">वडा नं. २ नाग्रे गगर्चे</string>
-    <string name="ward_2_personal_contact_number">वडा सचिवः राम कृपाल महतो -९८४१४६५२८७</string>
+    <string name="ward_2_personal_contact_number"> राम कृपाल महतो -९८४१४६५२८७</string>
     <string name="ward_2_population">१५०९</string>
     <string name="ward_2_contact_number">९८१८०३२१६०</string>
     <string name="lan2">27.6021N</string>
@@ -56,7 +56,7 @@
     <string name="profile_32">भोज बहादुर गौतम</string>
     <string name="profile_33">चित्र प्रसाद चौलागाई</string>
     <string name="ward_3_name">वडा नं. ३ माझीफेदा</string>
-    <string name="ward_3_personal_contact_number">वडा सचिवः राम कृपाल महतो -९८४१४६५२८७</string>
+    <string name="ward_3_personal_contact_number"> राम कृपाल महतो -९८४१४६५२८७</string>
     <string name="ward_3_population">२६६९</string>
     <string name="ward_3_contact_number">९८५११००२५२</string>
     <string name="lan3">27.5902N</string>
@@ -68,7 +68,7 @@
     <string name="profile_42">नविन गौतम</string>
     <string name="profile_43">दिलिप लामा</string>
     <string name="ward_4_name">वडा नं. ४ धुसेनी</string>
-    <string name="ward_4_personal_contact_number">वडा सचिवः मोहन प्रसाद दाहाल - ९८४०४४२९६३</string>
+    <string name="ward_4_personal_contact_number"> मोहन प्रसाद दाहाल - ९८४०४४२९६३</string>
     <string name="ward_4_population">२०५०</string>
     <string name="ward_4_contact_number">९८५१०५००१६</string>
     <string name="lan4">27.5992N</string>
@@ -79,7 +79,7 @@
     <string name="profile_52">बाबुराम चौलागाई</string>
     <string name="profile_53">छत्र बहादुर कोइराला</string>
     <string name="ward_5_name">वडा नं. ५ पोखरीचौंंरी</string>
-    <string name="ward_5_personal_contact_number">वडा सचिवः निरञ्‍जन प्रसाद पोखरेल - ९८४९७३१३०१</string>
+    <string name="ward_5_personal_contact_number"> निरञ्‍जन प्रसाद पोखरेल - ९८४९७३१३०१</string>
     <string name="ward_5_population">३६०३</string>
     <string name="ward_5_contact_number">९८४९२६२९५०</string>
 
@@ -91,7 +91,7 @@
     <string name="profile_62">होम प्रसाद दुलाल</string>
     <string name="profile_63">राजेन्द्र प्रसाद वास्कोटा</string>
     <string name="ward_6_name">वडा नं. ६</string>
-    <string name="ward_6_personal_contact_number">वडा सचिवः कपिलदेव दाहाल - ९८४१७४९४२६</string>
+    <string name="ward_6_personal_contact_number">कपिलदेव दाहाल - ९८४१७४९४२६</string>
     <string name="ward_6_population">३०६१</string>
     <string name="ward_6_contact_number">९८४११००४५६</string>
     <string name="lan6">27.5562N</string>
@@ -102,7 +102,7 @@
     <string name="profile_72">झम्क बहादुर गौतम</string>
     <string name="profile_73">ङेमा लामा</string>
     <string name="ward_7_name">वडा नं. ७ मादन कुडाँरी</string>
-    <string name="ward_7_personal_contact_number">वडा सचिवः निरञ्‍जन प्रसाद पोखरेल - ९८४९७३१३०१</string>
+    <string name="ward_7_personal_contact_number">निरञ्‍जन प्रसाद पोखरेल - ९८४९७३१३०१</string>
     <string name="ward_7_population">१८९७</string>
     <string name="ward_7_contact_number">९८४१२०३२४१</string>
     <string name="lan7">27.5290N</string>
@@ -113,7 +113,7 @@
     <string name="profile_82">रमला पन्त</string>
     <string name="profile_83">उद्धव प्रसाद चौलागाई</string>
     <string name="ward_8_name">वडा नं. ८ विर्ता देउराली</string>
-    <string name="ward_8_personal_contact_number">वडा सचिवः रामचन्द्र अधिकारी -९८४१०५७६४७</string>
+    <string name="ward_8_personal_contact_number">रामचन्द्र अधिकारी -९८४१०५७६४७</string>
     <string name="ward_8_population">२२७२</string>
     <string name="ward_8_contact_number">९८५११७६६३८</string>
     <string name="lan8">27.5671N</string>
@@ -124,7 +124,7 @@
     <string name="profile_92">पासाङ लामा</string>
     <string name="profile_93">नारायण प्रसाद चौलागाई</string>
     <string name="ward_9_name">वडा नं. ९ गोठपानी</string>
-    <string name="ward_9_personal_contact_number">वडा सचिवः</string>
+    <string name="ward_9_personal_contact_number">-</string>
     <string name="ward_9_population">१५३१</string>
     <string name="ward_9_contact_number">९८१३७६७१६८</string>
 

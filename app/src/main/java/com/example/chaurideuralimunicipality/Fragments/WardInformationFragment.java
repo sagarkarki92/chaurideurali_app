@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.chaurideuralimunicipality.Activities.WardDetailsActivity;
@@ -18,7 +19,8 @@ import java.io.Serializable;
 
 public class WardInformationFragment extends Fragment implements Serializable {
 
-    TextView sachibname, ward_population,ward_contactnumber;
+    TextView sachibname, ward_population,ward_contactnumber,ward_number;
+    ImageView img_warddetails;
 
 
     @Override
@@ -29,6 +31,8 @@ public class WardInformationFragment extends Fragment implements Serializable {
         sachibname = view.findViewById(R.id.ward_sachibname);
         ward_population = view.findViewById(R.id.ward_population);
         ward_contactnumber = view.findViewById(R.id.ward_contactnumber);
+        ward_number = view.findViewById(R.id.ward_number);
+        img_warddetails = view.findViewById(R.id.img_warddetails);
 
         //getting data from ward list activity via wardDetailsActivity to check and return required information of that specific ward
 
@@ -38,6 +42,8 @@ public class WardInformationFragment extends Fragment implements Serializable {
             sachibname.setText(information.getSachivName());
             ward_population.setText(information.getPopulation());
             ward_contactnumber.setText(information.getWard_phone_number());
+            ward_number.setText(information.getWardno());
+
         }
         return view;
      }

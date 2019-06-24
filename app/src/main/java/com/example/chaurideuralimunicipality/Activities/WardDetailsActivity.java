@@ -13,6 +13,7 @@ import com.example.chaurideuralimunicipality.Adaptors.WardDetailsPagerAdapter;
 import com.example.chaurideuralimunicipality.Fragments.WardInformationFragment;
 import com.example.chaurideuralimunicipality.Fragments.WardPeopleFragment;
 import com.example.chaurideuralimunicipality.R;
+import com.example.chaurideuralimunicipality.model.People;
 import com.example.chaurideuralimunicipality.model.WardDetailInformation;
 
 public class WardDetailsActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class WardDetailsActivity extends AppCompatActivity {
 
         //toolbar setting up
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Ward Details");
+        toolbar.setTitle("Wards Details");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,11 +52,17 @@ public class WardDetailsActivity extends AppCompatActivity {
 
     }
 
-    //getting name from ward list  which ward clicked
+    //getting name from ward list  which ward clicked for displaying ward information
     public WardDetailInformation getWardinfo(){
         Intent intent = getIntent();
         WardDetailInformation detailinfo = (WardDetailInformation) intent.getSerializableExtra("wardinfo");
         return detailinfo;
+    }
+    //getting details of people for displaying in people fragment of particular ward
+    public People getPeopleInfo(){
+        Intent intent = getIntent();
+        People peopleinfo = (People) intent.getSerializableExtra("wardpeople");
+        return peopleinfo;
     }
 
     private void settingPageAdapter() {

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.chaurideuralimunicipality.Activities.WardDetailsActivity;
 import com.example.chaurideuralimunicipality.R;
+import com.example.chaurideuralimunicipality.model.People;
 import com.example.chaurideuralimunicipality.model.WardDetailInformation;
 import com.example.chaurideuralimunicipality.model.Wards;
 
@@ -25,6 +26,7 @@ public class WardAdaptor extends RecyclerView.Adapter<WardAdaptor.WardViewHolder
     private String wardno;
     String ward1;
     WardDetailInformation detailInformation;
+    People people;
 
 
     public WardAdaptor(Context mcontext, List<Wards> wardsList) {
@@ -55,44 +57,55 @@ public class WardAdaptor extends RecyclerView.Adapter<WardAdaptor.WardViewHolder
                 if(wards.getWardname().equals(ward1)){
                     wardno= "Ward no. 1";
                     //sending data of ward 1 to class and to fragment via serializable
-                    detailInformation = new WardDetailInformation(mcontext.getString(R.string.ward_1_personal_contact_number),
+                    detailInformation = new WardDetailInformation(wardno,mcontext.getString(R.string.ward_1_personal_contact_number),
                             mcontext.getString(R.string.ward_1_population),mcontext.getString(R.string.ward_1_contact_number));
+                    people = new People("adachya name","aadachya","98418575785");
+
                 }
                 else if(wards.getWardname().equals(mcontext.getString(R.string.ward2))){
-                    detailInformation = new WardDetailInformation(mcontext.getString(R.string.ward_2_personal_contact_number),
+                    wardno= "Ward no. 2";
+                    detailInformation = new WardDetailInformation(wardno,mcontext.getString(R.string.ward_2_personal_contact_number),
                             mcontext.getString(R.string.ward_2_population),mcontext.getString(R.string.ward_2_contact_number));
                 }
                 else if(wards.getWardname().equals(mcontext.getString(R.string.ward3))){
-                    detailInformation = new WardDetailInformation(mcontext.getString(R.string.ward_3_personal_contact_number),
+                    wardno= "Ward no. 3";
+                    detailInformation = new WardDetailInformation(wardno,mcontext.getString(R.string.ward_3_personal_contact_number),
                             mcontext.getString(R.string.ward_3_population),mcontext.getString(R.string.ward_3_contact_number));
                 }
                 else if(wards.getWardname().equals(mcontext.getString(R.string.ward4))){
-                    detailInformation = new WardDetailInformation(mcontext.getString(R.string.ward_4_personal_contact_number),
+                    wardno= "Ward no. 4";
+                    detailInformation = new WardDetailInformation(wardno,mcontext.getString(R.string.ward_4_personal_contact_number),
                             mcontext.getString(R.string.ward_4_population),mcontext.getString(R.string.ward_4_contact_number));
                 }
                 else if(wards.getWardname().equals(mcontext.getString(R.string.ward5))){
-                    detailInformation = new WardDetailInformation(mcontext.getString(R.string.ward_5_personal_contact_number),
+                    wardno= "Ward no. 5";
+                    detailInformation = new WardDetailInformation(wardno,mcontext.getString(R.string.ward_5_personal_contact_number),
                             mcontext.getString(R.string.ward_5_population),mcontext.getString(R.string.ward_5_contact_number));
                 }
                 else if(wards.getWardname().equals(mcontext.getString(R.string.ward6))){
-                    detailInformation = new WardDetailInformation(mcontext.getString(R.string.ward_6_personal_contact_number),
+                    wardno= "Ward no. 6";
+                    detailInformation = new WardDetailInformation(wardno,mcontext.getString(R.string.ward_6_personal_contact_number),
                             mcontext.getString(R.string.ward_6_population),mcontext.getString(R.string.ward_6_contact_number));
                 }
                 else if(wards.getWardname().equals(mcontext.getString(R.string.ward7))){
-                    detailInformation = new WardDetailInformation(mcontext.getString(R.string.ward_7_personal_contact_number),
+                    wardno= "Ward no. 7";
+                    detailInformation = new WardDetailInformation(wardno,mcontext.getString(R.string.ward_7_personal_contact_number),
                             mcontext.getString(R.string.ward_7_population),mcontext.getString(R.string.ward_7_contact_number));
                 }
                 else if(wards.getWardname().equals(mcontext.getString(R.string.ward8))){
-                    detailInformation = new WardDetailInformation(mcontext.getString(R.string.ward_8_personal_contact_number),
+                    wardno= "Ward no. 8";
+                    detailInformation = new WardDetailInformation(wardno,mcontext.getString(R.string.ward_8_personal_contact_number),
                             mcontext.getString(R.string.ward_8_population),mcontext.getString(R.string.ward_8_contact_number));
                 }
                 else if(wards.getWardname().equals(mcontext.getString(R.string.ward9))){
-                    detailInformation = new WardDetailInformation(mcontext.getString(R.string.ward_9_personal_contact_number),
+                    wardno= "Ward no. 9";
+                    detailInformation = new WardDetailInformation(wardno,mcontext.getString(R.string.ward_9_personal_contact_number),
                             mcontext.getString(R.string.ward_9_population),mcontext.getString(R.string.ward_9_contact_number));
                 }
 
                     Intent intent = new Intent(mcontext,WardDetailsActivity.class);
                     intent.putExtra("wardinfo", (Serializable) detailInformation);
+                    intent.putExtra("wardpeople", (Serializable) people);
                     mcontext.startActivity(intent);
 
             }
@@ -120,4 +133,7 @@ public class WardAdaptor extends RecyclerView.Adapter<WardAdaptor.WardViewHolder
             linearLayout =itemView.findViewById(R.id.ward_carditem);
         }
     }
+//    int[] image = {R.drawable.img_ward2,R.drawable.img_ward3,R.drawable.img_ward4,R.drawable.ward_5,
+//                    R.drawable.img_ward6,R.drawable.img_ward7,R.drawable.img_ward8,R.drawable.img_ward9};
+
 }

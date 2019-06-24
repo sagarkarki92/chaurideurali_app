@@ -1,18 +1,15 @@
 package com.example.chaurideuralimunicipality.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
-public class Notice implements Serializable {
-
+public class Program implements Serializable {
     private String date;
     private String title;
     private String body;
 
+    public Program(){}
 
-    public Notice(){}  //empty constructor for reading data from database
-
-    public Notice(String publishdate, String title, String body) {
+    public Program(String date, String title, String body) {
         this.date = date;
         this.title = title;
         this.body = body;
@@ -22,8 +19,8 @@ public class Notice implements Serializable {
         return date;
     }
 
-    public void setDate(String publishdate) {
-        this.date = publishdate;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getTitle() {
@@ -41,6 +38,4 @@ public class Notice implements Serializable {
     public void setBody(String body) {
         this.body = body;
     }
-
-
 }

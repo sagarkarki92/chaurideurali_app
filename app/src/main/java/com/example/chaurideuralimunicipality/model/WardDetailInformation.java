@@ -7,16 +7,25 @@ public class WardDetailInformation implements Serializable {
     private String sachivName;
     private  String population;
     private String ward_phone_number;
+    private String wardno;
 
     public WardDetailInformation(){}
 
-    public WardDetailInformation(String sachivName, String population, String ward_phone_number) {
+    public WardDetailInformation(String wardno,String sachivName, String population, String ward_phone_number) {
         this.sachivName = sachivName;
         this.population = population;
         this.ward_phone_number = ward_phone_number;
+        this.wardno = wardno;
+
     }
 
+    public String getWardno() {
+        return wardno;
+    }
 
+    public void setWardno(String wardno) {
+        this.wardno = wardno;
+    }
 
     public String getSachivName() {
         return sachivName;

@@ -1,6 +1,7 @@
 package com.example.chaurideuralimunicipality.Adaptors;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,15 +10,18 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.chaurideuralimunicipality.Activities.Notice_details;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Notice;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeViewHolder> {
+public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeViewHolder> implements Serializable{
 
-    Context mcontext;
-    List<Notice> mlist;
+    private Context mcontext;
+    private List<Notice> mlist;
 
     public NoticeAdaptor(Context mcontext, List<Notice> mlist) {
         this.mcontext = mcontext;
@@ -37,7 +41,7 @@ public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeView
     public void onBindViewHolder(@NonNull NoticeViewHolder noticeViewHolder, int position) {
 
         //keeping data of each notice in position (i) of mlist
-        Notice notice = mlist.get(position);
+        final Notice notice = mlist.get(position);
         noticeViewHolder.title.setText(notice.getTitle());
         noticeViewHolder.pubdate.setText(notice.getDate());
 
@@ -45,10 +49,14 @@ public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeView
         noticeViewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mcontext,"item clicked", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(mcontext, Notice_details.class);
+                intent.putExtra("notice", (Serializable) notice);
+                mcontext.startActivity(intent);
                 //yesbata notice ko object pathaera arko details activity ma  object tanni and getTitle getbody garera display garauni
             }
         });
+
+
 
     }
 
@@ -63,9 +71,9 @@ public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeView
         LinearLayout linearLayout;
         public NoticeViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.notice_title);
-            pubdate = itemView.findViewById(R.id.notice_pub_date);
-            linearLayout = itemView.findViewById(R.id.notice_item);
+            title = itemView.findViewById(R.id.title);
+            pubdate = itemView.findViewById(R.id.pub_date);
+            linearLayout = itemView.findViewById(R.id.item_list );
         }
     }
 }

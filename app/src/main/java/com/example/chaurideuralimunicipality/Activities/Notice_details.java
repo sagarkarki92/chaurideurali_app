@@ -8,8 +8,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.chaurideuralimunicipality.R;
+import com.example.chaurideuralimunicipality.model.Notice;
 
-public class Notice_details extends AppCompatActivity {
+import java.io.Serializable;
+
+public class Notice_details extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
     TextView title,information;
@@ -22,7 +25,7 @@ public class Notice_details extends AppCompatActivity {
 
         // -----------setting up toolbar
         toolbar = findViewById(R.id.notice_details_toolbar);
-        toolbar.setTitle("NoticeActivity");
+        toolbar.setTitle("Notice Details");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +33,13 @@ public class Notice_details extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
+        title.setText(getNoticeData().getTitle());
+        information.setText(getNoticeData().getBody()); //getting data from object that is sent from noticeactivity
 
+
+    }
+    public Notice getNoticeData(){
+        Notice notice = (Notice) getIntent().getSerializableExtra("notice");
+        return notice;
     }
 }
