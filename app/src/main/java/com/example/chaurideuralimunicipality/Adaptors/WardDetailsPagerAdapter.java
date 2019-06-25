@@ -16,7 +16,9 @@ public class WardDetailsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
+
         return mlist.get(i);
+
     }
 
     @Override

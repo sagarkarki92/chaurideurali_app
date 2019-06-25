@@ -27,16 +27,18 @@ public class WardPeopleFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_ward_people, container, false);
-        listView = view.findViewById(R.id.wardpeople_listview);
-        peoplename = view.findViewById(R.id.peoplename);
-        peoplepost = view.findViewById(R.id.peoplepost);
-        peoplenumber = view.findViewById(R.id.peoplephone);
+//        listView = view.findViewById(R.id.wardpeople_listview);
+//        peoplename = view.findViewById(R.id.peoplename);
+//        peoplepost = view.findViewById(R.id.peoplepost);
+//        peoplenumber = view.findViewById(R.id.peoplephone);
 
         WardDetailsActivity detailsActivity = (WardDetailsActivity) getActivity();
         People people = detailsActivity.getPeopleInfo();
-        String[] peopleinfo = {people.getName(),people.getPost(),people.getPhonenumber()};
-        ArrayAdapter<People> arrayAdapter = new ArrayAdapter<People>(getActivity(),R.layout.wardpeople_card, (List<People>) people);
-        listView.setAdapter(arrayAdapter);
+//        demotext.setText(people.getName());
+//        String[] peopleinfo = {people.getName(),people.getPost(),people.getPhonenumber()};
+//        ArrayAdapter<People> arrayAdapter = new ArrayAdapter<People>(getActivity(),R.layout.wardpeople_card, (List<People>) people);
+//        listView.setAdapter(arrayAdapter);
+
         return view;
     }
 

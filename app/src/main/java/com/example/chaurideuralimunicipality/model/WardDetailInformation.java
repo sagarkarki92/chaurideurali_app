@@ -8,15 +8,25 @@ public class WardDetailInformation implements Serializable {
     private  String population;
     private String ward_phone_number;
     private String wardno;
+    private int photo;
 
     public WardDetailInformation(){}
 
-    public WardDetailInformation(String wardno,String sachivName, String population, String ward_phone_number) {
+    public WardDetailInformation(int photo,String wardno,String sachivName, String population, String ward_phone_number) {
         this.sachivName = sachivName;
         this.population = population;
         this.ward_phone_number = ward_phone_number;
         this.wardno = wardno;
+        this.photo = photo;
 
+    }
+
+    public int getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(int photo) {
+        this.photo = photo;
     }
 
     public String getWardno() {

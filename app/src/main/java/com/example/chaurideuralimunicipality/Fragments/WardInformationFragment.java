@@ -37,12 +37,14 @@ public class WardInformationFragment extends Fragment implements Serializable {
         //getting data from ward list activity via wardDetailsActivity to check and return required information of that specific ward
 
         WardDetailsActivity wardDetailsActivity = (WardDetailsActivity) getActivity();
+
         if(wardDetailsActivity!=null) {
             WardDetailInformation information = wardDetailsActivity.getWardinfo();
             sachibname.setText(information.getSachivName());
             ward_population.setText(information.getPopulation());
             ward_contactnumber.setText(information.getWard_phone_number());
             ward_number.setText(information.getWardno());
+            img_warddetails.setImageResource(information.getPhoto());
 
         }
         return view;

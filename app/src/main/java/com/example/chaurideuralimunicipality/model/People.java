@@ -7,6 +7,7 @@ public class People implements Serializable {
     String post;
     String phonenumber;
 
+    public People(){}
     public People(String name, String post, String phonenumber) {
         this.name = name;
         this.post = post;
