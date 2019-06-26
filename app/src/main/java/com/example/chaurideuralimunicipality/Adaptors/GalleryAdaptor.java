@@ -1,23 +1,39 @@
 package com.example.chaurideuralimunicipality.Adaptors;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.chaurideuralimunicipality.Activities.GalleryDetails;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Gallery;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryViewHolder> {
+public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryViewHolder> implements Serializable {
     Context mcontext;
     List<Gallery> mlist;   //gallery should have title and image of first index so that, that image could be use as background of gallery
 
+    public GalleryAdaptor(Context mcontext, List<Gallery> mlist){
+        this.mcontext = mcontext;
+        this.mlist = mlist;
+    }
     @NonNull
     @Override
     public GalleryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -26,25 +42,45 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GalleryViewHolder galleryViewHolder, int i) {
+    public void onBindViewHolder(@NonNull GalleryViewHolder galleryViewHolder, int position) {
 
-        Gallery gallery = mlist.get(i);
+        final Gallery gallery = mlist.get(position);
         galleryViewHolder.title.setText(gallery.getTitle());
-        //thumbnail keeoing decision yet to make
+        Picasso.get().load(gallery.getUrls().get(0)).into(galleryViewHolder.thumbnail);
+        final List<String> url = new ArrayList<>();
+        url.add(gallery.getUrls().toString());
+        Log.d("title:",gallery.getTitle());
+
+        //when user clicked one album it should take inside of that album
+        galleryViewHolder.album_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                FirebaseDatabase database = FirebaseDatabase.getInstance();
+//                DatabaseReference reference = database.getReference().child("Images");
+                Intent intent = new Intent(mcontext,GalleryDetails.class);
+                intent.putStringArrayListExtra("urllist", (ArrayList<String>) url);
+//                intent.putExtra("galleryobject",gallery);
+                mcontext.startActivity(intent);
+
+            }
+        });
+        //thumbnail keeping decision yet to make
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mlist.size();
     }
 
     public class GalleryViewHolder extends RecyclerView.ViewHolder {
         TextView title;
         ImageView thumbnail;
+        LinearLayout album_layout;
         public GalleryViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.album_name);
             thumbnail = itemView.findViewById(R.id.album_thumbnail);
+            album_layout = itemView.findViewById(R.id.album_card_layout);
         }
     }
 }

@@ -47,7 +47,7 @@ public class NoticeActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.notice_toolbar);
         toolbar.setTitle("NoticeActivity");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(   new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                onBackPressed();
@@ -55,7 +55,7 @@ public class NoticeActivity extends AppCompatActivity {
         });
 
         recyclerView = findViewById(R.id.notice_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,1));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
         mlist = new ArrayList<>();
         loadUrlData();

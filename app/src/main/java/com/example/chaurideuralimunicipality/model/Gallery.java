@@ -1,14 +1,16 @@
 package com.example.chaurideuralimunicipality.model;
 
-import android.net.Uri;
+import java.io.Serializable;
+import java.util.List;
 
-public class Gallery {
+public class Gallery implements Serializable {
     private String title;
-    private Uri bgimage;
+    private List<String> urls;
 
-    public Gallery(String title, Uri bgimage) {
+    public Gallery(){}
+    public Gallery(String title, List<String> urls) {
         this.title = title;
-        this.bgimage = bgimage;
+        this.urls = urls;
     }
 
     public String getTitle() {
@@ -19,11 +21,11 @@ public class Gallery {
         this.title = title;
     }
 
-    public Uri getBgimage() {
-        return bgimage;
+    public List<String> getUrls() {
+        return urls;
     }
 
-    public void setBgimage(Uri bgimage) {
-        this.bgimage = bgimage;
+    public void setUrls(List<String> urls) {
+        this.urls = urls;
     }
 }
