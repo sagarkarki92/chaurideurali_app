@@ -55,7 +55,7 @@ public class NoticeActivity extends AppCompatActivity {
         });
 
         recyclerView = findViewById(R.id.notice_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,1));
 
         mlist = new ArrayList<>();
         loadUrlData();

@@ -15,11 +15,6 @@ import android.widget.TextView;
 import com.example.chaurideuralimunicipality.Activities.GalleryDetails;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Gallery;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
@@ -46,20 +41,14 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
 
         final Gallery gallery = mlist.get(position);
         galleryViewHolder.title.setText(gallery.getTitle());
-        Picasso.get().load(gallery.getUrls().get(0)).into(galleryViewHolder.thumbnail);
-        final List<String> url = new ArrayList<>();
-        url.add(gallery.getUrls().toString());
-        Log.d("title:",gallery.getTitle());
+        Picasso.get().load(gallery.getUrls().get(1)).into(galleryViewHolder.thumbnail);
 
         //when user clicked one album it should take inside of that album
         galleryViewHolder.album_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                FirebaseDatabase database = FirebaseDatabase.getInstance();
-//                DatabaseReference reference = database.getReference().child("Images");
                 Intent intent = new Intent(mcontext,GalleryDetails.class);
-                intent.putStringArrayListExtra("urllist", (ArrayList<String>) url);
-//                intent.putExtra("galleryobject",gallery);
+                intent.putExtra("galleryobject",gallery);
                 mcontext.startActivity(intent);
 
             }

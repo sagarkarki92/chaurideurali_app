@@ -40,14 +40,13 @@ public class GalleryDetails extends AppCompatActivity implements Serializable {
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
         //setting adaptor to recycler view
-        adaptor = new GalleryDetailsAdaptor(this,getPhotodata());
+        adaptor = new GalleryDetailsAdaptor(this,getgalleryObject());
         recyclerView.setAdapter(adaptor);
 
     }
 
-    public List<String> getPhotodata(){
-         List<String> urls = getIntent().getStringArrayListExtra("urllist");
-        Log.d("from gallery details",urls.get(0));
-        return urls;
+    public Gallery getgalleryObject(){
+        Gallery gallery = (Gallery) getIntent().getSerializableExtra("galleryobject");
+        return gallery;
     }
 }

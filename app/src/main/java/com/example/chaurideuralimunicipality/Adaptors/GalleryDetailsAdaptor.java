@@ -19,11 +19,11 @@ import java.util.List;
 public class GalleryDetailsAdaptor extends RecyclerView.Adapter<GalleryDetailsAdaptor.GalleryDetailsViewHolder> {
 
     Context mcontext;
-    List<String> mlist;
+    Gallery gallery;
 
-    public GalleryDetailsAdaptor(Context context,List<String> mlist) {
+    public GalleryDetailsAdaptor(Context context,Gallery gallery) {
         this.mcontext = context;
-        this.mlist = mlist;
+        this.gallery = gallery;
     }
 
     @NonNull
@@ -36,13 +36,14 @@ public class GalleryDetailsAdaptor extends RecyclerView.Adapter<GalleryDetailsAd
     @Override
     public void onBindViewHolder(@NonNull GalleryDetailsViewHolder galleryDetailsViewHolder, int i) {
 
-      Picasso.get().load(mlist.get(i)).into(galleryDetailsViewHolder.photo);
+       Log.d("from bind i url",gallery.getUrls().get(i));
+     Picasso.get().load(gallery.getUrls().get(i)).into(galleryDetailsViewHolder.photo);
 
     }
 
     @Override
     public int getItemCount() {
-        return mlist.size();
+        return gallery.getUrls().size();
     }
 
     public class GalleryDetailsViewHolder extends RecyclerView.ViewHolder {

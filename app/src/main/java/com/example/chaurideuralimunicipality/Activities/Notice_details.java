@@ -1,27 +1,42 @@
 package com.example.chaurideuralimunicipality.Activities;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Notice;
+import com.github.barteksc.pdfviewer.PDFView;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Notice_details extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
     TextView title,information;
+    PDFView pdf;
+    Button showpdf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice_details);
         title = findViewById(R.id.notice_details_title);
         information = findViewById(R.id.notice_details_information);
+        pdf = findViewById(R.id.pdflink);
+        showpdf = findViewById(R.id.showpdf);
 
         // -----------setting up toolbar
         toolbar = findViewById(R.id.notice_details_toolbar);
@@ -33,8 +48,25 @@ public class Notice_details extends AppCompatActivity implements Serializable {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
+
+        //showing data getting from object (i.e title body and pdf to activity)
         title.setText(getNoticeData().getTitle());
         information.setText(getNoticeData().getBody()); //getting data from object that is sent from noticeactivity
+        final String pdfurl = getNoticeData().getUrl();
+
+        if(pdfurl != null) {
+
+            showpdf.setVisibility(View.VISIBLE);
+            showpdf.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(pdfurl));
+                    startActivity(intent);
+                }
+            });
+        }else{
+            showpdf.setVisibility(View.GONE);
+        }
 
 
     }
@@ -42,4 +74,6 @@ public class Notice_details extends AppCompatActivity implements Serializable {
         Notice notice = (Notice) getIntent().getSerializableExtra("notice");
         return notice;
     }
+
 }
+

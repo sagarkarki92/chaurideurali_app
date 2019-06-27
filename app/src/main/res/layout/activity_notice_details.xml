@@ -15,8 +15,7 @@
     <TextView
         android:id="@+id/notice_details_title"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_height="wrap_content"
         android:padding="12dp"
         android:textSize="@dimen/details_title"
         android:textStyle="bold"
@@ -30,9 +29,24 @@
     <TextView
         android:id="@+id/notice_details_information"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin_information"
         android:textSize="@dimen/details_information"/>
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdflink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/showpdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Pdf"/>
+
+    <!--<WebView-->
+        <!--android:id="@+id/pdflink"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"/>-->
 
 </LinearLayout>

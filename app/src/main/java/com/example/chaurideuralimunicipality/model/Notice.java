@@ -8,22 +8,24 @@ public class Notice implements Serializable {
     private String date;
     private String title;
     private String body;
+    private String url;
 
 
     public Notice(){}  //empty constructor for reading data from database
 
-    public Notice(String publishdate, String title, String body) {
+    public Notice(String date, String title, String body, String url) {
         this.date = date;
         this.title = title;
         this.body = body;
+        this.url = url;
     }
 
     public String getDate() {
         return date;
     }
 
-    public void setDate(String publishdate) {
-        this.date = publishdate;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getTitle() {
@@ -42,5 +44,11 @@ public class Notice implements Serializable {
         this.body = body;
     }
 
+    public String getUrl() {
+        return url;
+    }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }
