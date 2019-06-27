@@ -2,32 +2,22 @@ package com.example.chaurideuralimunicipality.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Notice;
-import com.github.barteksc.pdfviewer.PDFView;
-
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.Serializable;
-import java.net.HttpURLConnection;
-import java.net.URL;
+
 
 public class Notice_details extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
     TextView title,information;
-    PDFView pdf;
     Button showpdf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +25,6 @@ public class Notice_details extends AppCompatActivity implements Serializable {
         setContentView(R.layout.activity_notice_details);
         title = findViewById(R.id.notice_details_title);
         information = findViewById(R.id.notice_details_information);
-        pdf = findViewById(R.id.pdflink);
         showpdf = findViewById(R.id.showpdf);
 
         // -----------setting up toolbar
