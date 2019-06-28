@@ -1,11 +1,13 @@
 package com.example.chaurideuralimunicipality.Activities;
 
+import android.app.ProgressDialog;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import com.example.chaurideuralimunicipality.Adaptors.ProgramAdaptor;
 import com.example.chaurideuralimunicipality.R;
@@ -26,6 +28,7 @@ public class ProgramActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     FirebaseDatabase database;
     DatabaseReference reference;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +36,12 @@ public class ProgramActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.program_toolbar);
         toolbar.setTitle("Program");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
-
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         //setting recyclerview
         recyclerView = findViewById(R.id.program_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,1));
+        recyclerView.setLayoutManager(new GridLayoutManager(ProgramActivity.this,1));
 
         //getting data from database
         mlist = new ArrayList<>();
@@ -45,6 +50,7 @@ public class ProgramActivity extends AppCompatActivity {
         //keeping data into recyclerview via adaptor
         ProgramAdaptor adaptor = new ProgramAdaptor(this,mlist);
         recyclerView.setAdapter(adaptor);
+        progressDialog.dismiss();
     }
 
     private void getProgramData() {
@@ -62,7 +68,7 @@ public class ProgramActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(ProgramActivity.this,"Something Happened",Toast.LENGTH_SHORT).show();
             }
         });
     }

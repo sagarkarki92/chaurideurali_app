@@ -50,7 +50,7 @@ public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeView
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mcontext, Notice_details.class);
-                intent.putExtra("notice", (Serializable) notice);
+                intent.putExtra("notice", notice);
                 mcontext.startActivity(intent);
                 //yesbata notice ko object pathaera arko details activity ma  object tanni and getTitle getbody garera display garauni
             }

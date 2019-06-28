@@ -20,8 +20,8 @@ import java.util.List;
 
 public class ProgramAdaptor extends RecyclerView.Adapter<ProgramAdaptor.ProgramViewHolder> implements Serializable {
 
-    Context mcontext;
-    List<Program> mlist;
+    private Context mcontext;
+    private List<Program> mlist;
 
     public ProgramAdaptor(Context mcontext, List<Program> mlist) {
     this.mcontext = mcontext;
@@ -32,8 +32,8 @@ public class ProgramAdaptor extends RecyclerView.Adapter<ProgramAdaptor.ProgramV
     @NonNull
     @Override
     public ProgramViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        LayoutInflater inflater=LayoutInflater.from(mcontext);
-        View view = inflater.inflate(R.layout.list_item,null);
+
+        View view = LayoutInflater.from(mcontext).inflate(R.layout.list_item,null);
         return new ProgramViewHolder(view);
     }
 
@@ -47,7 +47,7 @@ public class ProgramAdaptor extends RecyclerView.Adapter<ProgramAdaptor.ProgramV
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mcontext, ProgramDetailsActivity.class);
-                intent.putExtra("programdetails", (Serializable) program);
+                intent.putExtra("programdetails", program);
                 mcontext.startActivity(intent);
             }
         });
