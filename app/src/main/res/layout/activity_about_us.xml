@@ -15,10 +15,11 @@
     <ImageView
         android:id="@+id/contact_us_image"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_height="200dp"
+
         android:scaleType="fitXY"
-        android:src="@mipmap/cover"/>
+        android:src="@mipmap/cover"
+        />
 
     <View
         android:layout_width="match_parent"
@@ -29,11 +30,11 @@
     <TextView
         android:id="@+id/contact_us_information"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_height="wrap_content"
         android:textSize="@dimen/details_information"
-        android:text="Details will be here"
-        android:gravity="center"/>
+        android:text="@string/aboutus"
+        android:gravity="center"
+        android:textColor="@android:color/black"/>
 
 
 </LinearLayout>
