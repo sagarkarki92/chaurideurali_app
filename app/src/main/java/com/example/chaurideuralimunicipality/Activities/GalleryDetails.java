@@ -26,7 +26,7 @@ public class GalleryDetails extends AppCompatActivity implements Serializable {
         setContentView(R.layout.activity_gallery_details);
         //setting up toolbar
         toolbar = findViewById(R.id.photo_toolbar);
-        toolbar.setTitle("Gallery Details");
+        toolbar.setTitle("Photos");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

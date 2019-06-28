@@ -1,24 +1,27 @@
 package com.example.chaurideuralimunicipality.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class People implements Serializable {
-    String name;
+    List<String> name;
     String post;
     String phonenumber;
 
-    public People(){}
-    public People(String name, String post, String phonenumber) {
+    public People() {
+    }
+
+    public People(List<String> name, String post, String phonenumber) {
         this.name = name;
         this.post = post;
         this.phonenumber = phonenumber;
     }
 
-    public String getName() {
+    public List<String> getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(List<String> name) {
         this.name = name;
     }
 

@@ -52,12 +52,12 @@ public class WardActivity extends AppCompatActivity {
         mlist.add(new Wards(1,getString(R.string.ward1)));
         mlist.add(new Wards(2,getString(R.string.ward2)));
         mlist.add(new Wards(3,getString(R.string.ward3)));
-        mlist.add(new Wards(3,getString(R.string.ward4)));
-        mlist.add(new Wards(3,getString(R.string.ward5)));
-        mlist.add(new Wards(3,getString(R.string.ward6)));
-        mlist.add(new Wards(3,getString(R.string.ward7)));
-        mlist.add(new Wards(3,getString(R.string.ward8)));
-        mlist.add(new Wards(3,getString(R.string.ward9)));
+        mlist.add(new Wards(4,getString(R.string.ward4)));
+        mlist.add(new Wards(5,getString(R.string.ward5)));
+        mlist.add(new Wards(6,getString(R.string.ward6)));
+        mlist.add(new Wards(7,getString(R.string.ward7)));
+        mlist.add(new Wards(8,getString(R.string.ward8)));
+        mlist.add(new Wards(9,getString(R.string.ward9)));
 
         //setting up adaptor to recycler
         adaptor = new WardAdaptor(this,mlist);

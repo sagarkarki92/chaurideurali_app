@@ -17,6 +17,7 @@ import com.example.chaurideuralimunicipality.model.WardDetailInformation;
 import com.example.chaurideuralimunicipality.model.Wards;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class WardAdaptor extends RecyclerView.Adapter<WardAdaptor.WardViewHolder> implements Serializable {
@@ -24,8 +25,8 @@ public class WardAdaptor extends RecyclerView.Adapter<WardAdaptor.WardViewHolder
     private Context mcontext;
     private List<Wards> wardsList;
     private String wardno;
-    WardDetailInformation detailInformation;
-    People people;
+    private WardDetailInformation detailInformation;
+    private People people;
 
 
     public WardAdaptor(Context mcontext, List<Wards> wardsList) {
@@ -58,8 +59,13 @@ public class WardAdaptor extends RecyclerView.Adapter<WardAdaptor.WardViewHolder
                     //sending data of ward 1 to class and to fragment via serializable
                     detailInformation = new WardDetailInformation(R.drawable.ic_photo_camera_black_24dp,wardno,mcontext.getString(R.string.ward_1_personal_contact_number),
                             mcontext.getString(R.string.ward_1_population),mcontext.getString(R.string.ward_1_contact_number));
-                    people = new People("adachya name","aadachya","98418575785");
-
+                    List<String> names = new ArrayList<>();
+                    names.add("Asdasd");
+                    names.add("sdasd");
+                    names.add("sdasd");
+                    names.add("sdasd");
+                    names.add("sdasd");
+                    people = new People(names,"aadachya","98418575785");
                 }
                 else if(wards.getWardname().equals(mcontext.getString(R.string.ward2))){
                     wardno= "Ward no. 2";
@@ -104,7 +110,7 @@ public class WardAdaptor extends RecyclerView.Adapter<WardAdaptor.WardViewHolder
 
                     Intent intent = new Intent(mcontext,WardDetailsActivity.class);
                     intent.putExtra("wardinfo", detailInformation);
-                    intent.putExtra("wardpeople",people);
+                    intent.putExtra("wardpeople", people);
                     mcontext.startActivity(intent);
 
             }
