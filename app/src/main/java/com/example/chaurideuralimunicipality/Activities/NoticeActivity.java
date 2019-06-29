@@ -41,6 +41,9 @@ public class NoticeActivity extends AppCompatActivity {
 
         progressDialog= new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
+        Toast.makeText(NoticeActivity.this, "लोड हुँदैछ", Toast.LENGTH_SHORT).show();
+
+
         progressDialog.show();
 
         //setting up toolbar
@@ -61,7 +64,7 @@ public class NoticeActivity extends AppCompatActivity {
         loadUrlData();
 
 
-        adaptor = new NoticeAdaptor(getApplicationContext(),mlist);
+        adaptor = new NoticeAdaptor(NoticeActivity.this,mlist);
         recyclerView.setAdapter(adaptor);
     }
 
@@ -75,12 +78,16 @@ public class NoticeActivity extends AppCompatActivity {
         myrefrence.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                  for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
 
-                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     Notice notice = dataSnapshot1.getValue(Notice.class);
-                    mlist.add(notice);
+                    if(notice!=null) {
+                        mlist.add(notice);
+                    }else{
+                        Toast.makeText(NoticeActivity.this, "माफ गर्नुहोस्! सूचना डेटा छैन", Toast.LENGTH_SHORT).show();
 
-                    Toast.makeText(NoticeActivity.this, "data should be seen", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
                 recyclerView.getAdapter().notifyDataSetChanged();
             }
