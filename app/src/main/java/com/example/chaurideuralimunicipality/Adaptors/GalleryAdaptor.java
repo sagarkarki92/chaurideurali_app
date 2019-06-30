@@ -41,7 +41,7 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
 
         final Gallery gallery = mlist.get(position);
         galleryViewHolder.title.setText(gallery.getTitle());
-        Picasso.get().load(gallery.getUrls().get(1)).into(galleryViewHolder.thumbnail);
+        Picasso.get().load(gallery.getUrls().get(0)).into(galleryViewHolder.thumbnail);
 
         //when user clicked one album it should take inside of that album
         galleryViewHolder.album_layout.setOnClickListener(new View.OnClickListener() {

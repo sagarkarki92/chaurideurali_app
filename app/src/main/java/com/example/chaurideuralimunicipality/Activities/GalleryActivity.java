@@ -35,6 +35,7 @@ public class GalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+
         //setting up toolbar
         toolbar = findViewById(R.id.gallery_toolbar);
         toolbar.setTitle("Gallery");
