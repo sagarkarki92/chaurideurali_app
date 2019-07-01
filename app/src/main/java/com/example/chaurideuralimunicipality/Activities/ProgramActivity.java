@@ -65,16 +65,19 @@ public class ProgramActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(!mlist.isEmpty()) {
+                    mlist.clear();
+                }
                 for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
                     Program program = dataSnapshot1.getValue(Program.class);
                     if(program!=null) {
-
-                        mlist.add(program);
-                        System.out.println("-----------------------------");
-                        System.out.println(program.getTitle());
-                        System.out.println(program.getBody());
-                        System.out.println(program.getDate());
-                        System.out.println("-----------------------------");
+//
+                            mlist.add(program);
+//                        System.out.println("-----------------------------");
+//                        System.out.println(program.getTitle());
+//                        System.out.println(program.getBody());
+//                        System.out.println(program.getDate());
+//                        System.out.println("-----------------------------");
                     }else{
                         Toast.makeText(ProgramActivity.this, "माफ गर्नुहोस्! कुनै प्रोग्राम डेटा छैन", Toast.LENGTH_SHORT).show();
                     }

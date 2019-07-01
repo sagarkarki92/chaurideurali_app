@@ -56,6 +56,7 @@ public class GalleryActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this,2));
 
         mlist = new ArrayList<>();
+        Toast.makeText(GalleryActivity.this, "लोड हुँदैछ", Toast.LENGTH_SHORT).show();
         loadImagefromDatabase();
 
         //getting data to recyclerview
@@ -71,9 +72,15 @@ public class GalleryActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(!mlist.isEmpty()) {
+                    mlist.clear();
+                }
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
                     Gallery gallery = dataSnapshot1.getValue(Gallery.class);
-                    mlist.add(gallery);
+                    if(gallery!=null) {mlist.add(gallery);}
+                    else{
+                        Toast.makeText(GalleryActivity.this, "माफ गर्नुहोस्! फोटोहरू छैन", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 recyclerView.getAdapter().notifyDataSetChanged();
             }

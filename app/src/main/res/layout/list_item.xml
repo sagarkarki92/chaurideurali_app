@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:contentDescription="thumbnail"
-            android:src="@mipmap/logo"/>
+            app:srcCompat="@mipmap/logo"/>
 
         <LinearLayout
             android:layout_width="0dp"

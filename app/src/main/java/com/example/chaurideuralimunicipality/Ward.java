@@ -18,6 +18,11 @@ public class Ward extends AppCompatActivity {
     String fourthnumber;
     String fifthnumber;
 
+    String wardtitle;
+    String poulation;
+    String latlong;
+    String contact;
+
     String firstname;
     String secondname;
     String thirdname;
@@ -31,7 +36,7 @@ public class Ward extends AppCompatActivity {
 
         //setting up toolbar
         toolbar = findViewById(R.id.ward2_toolbar);
-        toolbar.setTitle("Ward List");
+        toolbar.setTitle("Ward Details");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +60,12 @@ public class Ward extends AppCompatActivity {
         TextView e1 = (TextView) findViewById(R.id.e1);
         TextView e2 = (TextView) findViewById(R.id.e2);
         TextView e3 = (TextView) findViewById(R.id.e3);
+
+        TextView ward = (TextView) findViewById(R.id.wardtitle);
+        TextView population = (TextView) findViewById(R.id.population);
+        TextView contact = (TextView) findViewById(R.id.contact);
+        TextView latlong = (TextView) findViewById(R.id.latlong);
+
         ImageView img1 = (ImageView) findViewById(R.id.ward_people1);
         ImageView img2 = (ImageView) findViewById(R.id.ward_people2);
         ImageView img3 = (ImageView) findViewById(R.id.ward_people3);
@@ -70,6 +81,11 @@ public class Ward extends AppCompatActivity {
         switch (wardNumber){
             case "1":
                 img1.setImageDrawable(getResources().getDrawable(R.drawable.rajuolitamang));
+                this.contact=getString(R.string.ward_1_contact_number);
+                this.latlong="";
+                this.poulation=getString(R.string.ward_1_population);
+                this.wardtitle=getString(R.string.ward_1_name);
+
                 this.firstname=getString(R.string.name_11);
                 this.secondname=getString(R.string.name_12);
                 this.thirdname=getString(R.string.name_13);
@@ -82,7 +98,10 @@ public class Ward extends AppCompatActivity {
                 this.fifthnumber=getString(R.string.number_15);
                 break;
             case "2":
-
+                this.contact=getString(R.string.ward_2_contact_number);
+                this.latlong=getString(R.string.lan2)+", "+getString(R.string.lon2);
+                this.poulation=getString(R.string.ward_2_population);
+                this.wardtitle=getString(R.string.ward_2_name);
                 this.firstname=getString(R.string.name_21);
                 this.secondname=getString(R.string.name_22);
                 this.thirdname=getString(R.string.name_23);
@@ -96,9 +115,10 @@ public class Ward extends AppCompatActivity {
 
                 break;
             case "3":
-                //this.firstProfilePic=getString(R.drawable.profile);
-//                this.secondProfilePic=;
-//                this.thirdProfilePic=;
+                this.contact=getString(R.string.ward_3_contact_number);
+                this.latlong=getString(R.string.lan3)+", "+getString(R.string.lon3);
+                this.poulation=getString(R.string.ward_3_population);
+                this.wardtitle=getString(R.string.ward_3_name);
                 img1.setImageDrawable(getResources().getDrawable(R.drawable.binodghising));
                 this.firstname=getString(R.string.name_31);
                 this.secondname=getString(R.string.name_32);
@@ -113,9 +133,10 @@ public class Ward extends AppCompatActivity {
 
                 break;
             case "4":
-                // this.firstProfilePic=getString(R.drawable.profile);
-//                this.secondProfilePic=;
-//                this.thirdProfilePic=;
+                this.contact=getString(R.string.ward_4_contact_number);
+                this.latlong=getString(R.string.lan4)+", "+getString(R.string.lon4);
+                this.poulation=getString(R.string.ward_4_population);
+                this.wardtitle=getString(R.string.ward_4_name);
                 this.firstname=getString(R.string.name_41);
                 this.secondname=getString(R.string.name_42);
                 this.thirdname=getString(R.string.name_43);
@@ -129,9 +150,10 @@ public class Ward extends AppCompatActivity {
 
                 break;
             case "5":
-                //  this.firstProfilePic=getString(R.drawable.profile);
-//                this.secondProfilePic=;
-//                this.thirdProfilePic=;
+                this.contact=getString(R.string.ward_5_contact_number);
+                this.latlong=getString(R.string.lan5)+", "+getString(R.string.lon5);
+                this.poulation=getString(R.string.ward_5_population);
+                this.wardtitle=getString(R.string.ward_5_name);
                 img1.setImageDrawable(getResources().getDrawable(R.drawable.rajkumargautum));
                 this.firstname=getString(R.string.name_51);
                 this.secondname=getString(R.string.name_52);
@@ -146,9 +168,10 @@ public class Ward extends AppCompatActivity {
 
                 break;
             case "6":
-                // this.firstProfilePic=getString(R.drawable.profile);
-//                this.secondProfilePic=;
-//                this.thirdProfilePic=;
+                this.contact=getString(R.string.ward_6_contact_number);
+                this.latlong=getString(R.string.lan6)+", "+getString(R.string.lon6);
+                this.poulation=getString(R.string.ward_6_population);
+                this.wardtitle=getString(R.string.ward_6_name);
                 this.firstname=getString(R.string.name_61);
                 this.secondname=getString(R.string.name_62);
                 this.thirdname=getString(R.string.name_63);
@@ -162,9 +185,10 @@ public class Ward extends AppCompatActivity {
 
                 break;
             case "7":
-                // this.firstProfilePic=getString(R.drawable.profile);
-//                this.secondProfilePic=;
-//                this.thirdProfilePic=;
+                this.contact=getString(R.string.ward_7_contact_number);
+                this.latlong=getString(R.string.lan7)+", "+getString(R.string.lon7);
+                this.poulation=getString(R.string.ward_7_population);
+                this.wardtitle=getString(R.string.ward_7_name);
                 this.firstname=getString(R.string.name_71);
                 this.secondname=getString(R.string.name_72);
                 this.thirdname=getString(R.string.name_73);
@@ -178,9 +202,10 @@ public class Ward extends AppCompatActivity {
 
                 break;
             case "8":
-                // this.firstProfilePic=getString(R.drawable.profile);
-//                this.secondProfilePic=;
-//                this.thirdProfilePic=;
+                this.contact=getString(R.string.ward_7_contact_number);
+                this.latlong=getString(R.string.lan7)+", "+getString(R.string.lon7);
+                this.poulation=getString(R.string.ward_7_population);
+                this.wardtitle=getString(R.string.ward_7_name);
                 this.firstname=getString(R.string.name_81);
                 this.secondname=getString(R.string.name_82);
                 this.thirdname=getString(R.string.name_83);
@@ -194,9 +219,10 @@ public class Ward extends AppCompatActivity {
 
                 break;
             case "9":
-                //this.firstProfilePic=getString(R.drawable.profile);
-//                this.secondProfilePic=;
-//                this.thirdProfilePic=;
+                this.contact=getString(R.string.ward_9_contact_number);
+                this.latlong=getString(R.string.lan9)+", "+getString(R.string.lon9);
+                this.poulation=getString(R.string.ward_9_population);
+                this.wardtitle=getString(R.string.ward_9_name);
                 img1.setImageDrawable(getResources().getDrawable(R.drawable.rambdhlama));
                 this.firstname=getString(R.string.name_91);
                 this.secondname=getString(R.string.name_92);
@@ -210,6 +236,12 @@ public class Ward extends AppCompatActivity {
                 this.fifthnumber=getString(R.string.number_95);
                 break;
         }
+
+        ward.setText(this.wardtitle);
+        contact.setText(this.contact);
+        population.setText(this.poulation);
+        latlong.setText(this.latlong);
+
         a1.setText(this.firstname);
         a2.setText(this.firstpost);
         a3.setText(this.firstnumber);

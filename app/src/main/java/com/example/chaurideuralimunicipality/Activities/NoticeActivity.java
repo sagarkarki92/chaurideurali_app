@@ -78,6 +78,9 @@ public class NoticeActivity extends AppCompatActivity {
         myrefrence.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(!mlist.isEmpty()) {
+                    mlist.clear();
+                }
                   for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
 
                     Notice notice = dataSnapshot1.getValue(Notice.class);
@@ -90,11 +93,12 @@ public class NoticeActivity extends AppCompatActivity {
 
                 }
                 recyclerView.getAdapter().notifyDataSetChanged();
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(),"Error Occured",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Error occured",Toast.LENGTH_SHORT).show();
             }
 
         });

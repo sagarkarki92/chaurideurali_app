@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:src="@drawable/aa"
+                app:srcCompat="@drawable/aa"
                 android:scaleType="center"/>
 
             <LinearLayout
@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:src="@drawable/vicechairman"
+                app:srcCompat="@drawable/vicechairman"
                 android:scaleType="fitCenter"/>
 
             <LinearLayout
