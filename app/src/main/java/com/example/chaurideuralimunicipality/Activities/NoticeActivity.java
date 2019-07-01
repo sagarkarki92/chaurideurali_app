@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -58,32 +59,37 @@ public class NoticeActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
 
         mlist = new ArrayList<>();
+        database = FirebaseDatabase.getInstance();
+        myrefrence = database.getReference("Notices");
         loadUrlData();
 
 
-        adaptor = new NoticeAdaptor(getApplicationContext(),mlist);
-        recyclerView.setAdapter(adaptor);
-    }
 
+    }
     private void loadUrlData() {
 
-
        //getting notice from database i.e now from fire base database !!!
-        database = FirebaseDatabase.getInstance();
-        myrefrence = database.getReference("Notices");
         progressDialog.dismiss();
         myrefrence.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    Notice notice = dataSnapshot1.getValue(Notice.class);
-                    mlist.add(notice);
-
-                    Toast.makeText(NoticeActivity.this, "data should be seen", Toast.LENGTH_SHORT).show();
+                if(!mlist.isEmpty()){
+                    mlist.clear();
                 }
-                recyclerView.getAdapter().notifyDataSetChanged();
-            }
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        Notice notice = dataSnapshot1.getValue(Notice.class);
+                        mlist.add(0,notice);
+
+                        Toast.makeText(NoticeActivity.this, "data should be seen", Toast.LENGTH_SHORT).show();
+                    }
+                    adaptor = new NoticeAdaptor(getApplicationContext(), mlist);
+                    recyclerView.setAdapter(adaptor);
+                    recyclerView.smoothScrollToPosition(0);
+
+                    Notice notice = dataSnapshot.getValue(Notice.class);
+                    mlist.add(notice);
+                }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -91,8 +97,6 @@ public class NoticeActivity extends AppCompatActivity {
             }
 
         });
-
-
 
     }
 }

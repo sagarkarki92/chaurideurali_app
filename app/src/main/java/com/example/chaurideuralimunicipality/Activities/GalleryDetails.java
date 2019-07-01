@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.chaurideuralimunicipality.Adaptors.GalleryDetailsAdaptor;
 import com.example.chaurideuralimunicipality.R;
@@ -18,6 +19,7 @@ import java.util.List;
 public class GalleryDetails extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
+    TextView title,description;
     RecyclerView recyclerView;
     GalleryDetailsAdaptor adaptor;
     @Override
@@ -34,6 +36,12 @@ public class GalleryDetails extends AppCompatActivity implements Serializable {
                 onBackPressed();
             }
         });
+        title = findViewById(R.id.gallery_title);
+        description = findViewById(R.id.gallery_description);
+
+        //setting title and description of whole gallery
+        title.setText(getgalleryObject().getTitle());
+        description.setText(getgalleryObject().getDescription());
 
         //setting up recycler view
         recyclerView = findViewById(R.id.photo_recyclerview);

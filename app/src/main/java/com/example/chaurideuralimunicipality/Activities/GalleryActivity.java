@@ -52,7 +52,7 @@ public class GalleryActivity extends AppCompatActivity {
 
         //setting up recyclerview
         recyclerView = findViewById(R.id.gallery_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this,2));
+        recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this,1));
 
         mlist = new ArrayList<>();
         loadImagefromDatabase();
@@ -68,11 +68,17 @@ public class GalleryActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Images");
         reference.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //checking if list is empty or not ..to not make dublicate file while making real time update
+                if(!mlist.isEmpty()){
+                    mlist.clear();
+                }
+
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
                     Gallery gallery = dataSnapshot1.getValue(Gallery.class);
-                    mlist.add(gallery);
+                    mlist.add(0,gallery);
                 }
                 recyclerView.getAdapter().notifyDataSetChanged();
             }

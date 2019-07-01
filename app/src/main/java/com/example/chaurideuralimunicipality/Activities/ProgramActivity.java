@@ -60,10 +60,15 @@ public class ProgramActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(!mlist.isEmpty()){
+                    mlist.clear();
+                }
                 for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
                     Program program = dataSnapshot1.getValue(Program.class);
-                    mlist.add(program);
+                    mlist.add(0,program);
+
                 }
+                recyclerView.getAdapter().notifyDataSetChanged();
             }
 
             @Override
