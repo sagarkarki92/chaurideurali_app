@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class ProgramDetailsActivity extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
-    TextView programtitle,programdetails;
+    TextView programtitle,programdetails,programDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,11 @@ public class ProgramDetailsActivity extends AppCompatActivity implements Seriali
         //applying data to program details activity getting from Program object sent from programadaptor
         programtitle = findViewById(R.id.program_details_title);
         programdetails = findViewById(R.id.program_details_information);
+        programDate=findViewById(R.id.program_details_date);
         programtitle.setText(getProgramData().getTitle());
         programdetails.setText(getProgramData().getBody());
+        programDate.setText(getProgramData().getDate());
+
     }
 
     public Program getProgramData(){
