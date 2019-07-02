@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.chaurideuralimunicipality.Adaptors.ProgramAdaptor;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Program;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -59,7 +60,7 @@ public class ProgramActivity extends AppCompatActivity {
     }
 
     private void getProgramData() {
-
+        FirebaseApp.initializeApp(this);
         database = FirebaseDatabase.getInstance();
         reference = database.getReference().child("Programs");
         reference.addValueEventListener(new ValueEventListener() {

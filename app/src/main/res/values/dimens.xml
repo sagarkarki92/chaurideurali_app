@@ -19,6 +19,8 @@
     <dimen name="fifteen_dp">15dp</dimen>
     <dimen name ="twenty_dp">20dp</dimen>
     <dimen name="people_img">96dp</dimen>
+    <dimen name="seventy_dp">70</dimen>
+    <dimen name="icons_dp">64dp</dimen>
 
 
 </resources>

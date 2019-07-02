@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.chaurideuralimunicipality.Adaptors.NoticeAdaptor;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Notice;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -72,6 +73,7 @@ public class NoticeActivity extends AppCompatActivity {
 
 
        //getting notice from database i.e now from fire base database !!!
+        FirebaseApp.initializeApp(this);
         database = FirebaseDatabase.getInstance();
         myrefrence = database.getReference("Notices");
         progressDialog.dismiss();

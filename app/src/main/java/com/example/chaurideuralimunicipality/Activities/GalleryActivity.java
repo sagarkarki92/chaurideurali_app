@@ -13,11 +13,13 @@ import android.widget.Toast;
 import com.example.chaurideuralimunicipality.Adaptors.GalleryAdaptor;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Gallery;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,18 +57,23 @@ public class GalleryActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.gallery_recyclerview);
         recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this,2));
 
+        Picasso.setSingletonInstance(
+                new Picasso.Builder(this)
+                        // additional settings
+                        .build());
+
         mlist = new ArrayList<>();
         Toast.makeText(GalleryActivity.this, "लोड हुँदैछ", Toast.LENGTH_SHORT).show();
         loadImagefromDatabase();
 
         //getting data to recyclerview
-        adaptor = new GalleryAdaptor(this,mlist);
+        adaptor = new GalleryAdaptor(GalleryActivity.this,mlist);
         recyclerView.setAdapter(adaptor);
         progressDialog.dismiss();
     }
 
     private void loadImagefromDatabase() {
-
+        FirebaseApp.initializeApp(this);
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Images");
         reference.addValueEventListener(new ValueEventListener() {
@@ -77,10 +84,13 @@ public class GalleryActivity extends AppCompatActivity {
                 }
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
                     Gallery gallery = dataSnapshot1.getValue(Gallery.class);
-                    if(gallery!=null) {mlist.add(gallery);}
-                    else{
-                        Toast.makeText(GalleryActivity.this, "माफ गर्नुहोस्! फोटोहरू छैन", Toast.LENGTH_SHORT).show();
-                    }
+//                    if(gallery!=null)
+//                    {
+                        mlist.add(gallery);
+//                    }
+//                    else{
+//                        Toast.makeText(GalleryActivity.this, "माफ गर्नुहोस्! फोटोहरू छैन", Toast.LENGTH_SHORT).show();
+//                    }
                 }
                 recyclerView.getAdapter().notifyDataSetChanged();
             }
