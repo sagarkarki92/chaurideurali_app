@@ -19,9 +19,9 @@ public class About_us extends AppCompatActivity {
         toolbar = findViewById(R.id.about_us_toolbar);
         toolbar.setTitle("About Us");
 
-
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
-        toolbar.setNavigationOnClickListener(   new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 onBackPressed();
