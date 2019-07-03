@@ -17,8 +17,9 @@ import java.io.Serializable;
 public class ProgramDetailsActivity extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
-    TextView programtitle,programdetails;
+    TextView programtitle,programdetails,programDate;
     Button seepdf;
+
 
 
     @Override
@@ -39,9 +40,12 @@ public class ProgramDetailsActivity extends AppCompatActivity implements Seriali
         //applying data to program details activity getting from Program object sent from programadaptor
         programtitle = findViewById(R.id.program_details_title);
         programdetails = findViewById(R.id.program_details_information);
+        programDate=findViewById(R.id.program_details_date);
+
         seepdf = findViewById(R.id.seepdf);
         programtitle.setText(getProgramData().getTitle());
         programdetails.setText(getProgramData().getBody());
+         programDate.setText(getProgramData().getDate());
         final String url = getProgramData().getUrl();
         if(url != null){
             seepdf.setVisibility(View.VISIBLE);
@@ -55,7 +59,6 @@ public class ProgramDetailsActivity extends AppCompatActivity implements Seriali
         }else{
             seepdf.setVisibility(View.GONE);
         }
-
 
     }
 
