@@ -5,12 +5,22 @@ import java.util.List;
 
 public class Gallery implements Serializable {
     private String title;
+    private String description;
     private List<String> urls;
 
     public Gallery(){}
-    public Gallery(String title, List<String> urls) {
+    public Gallery(String title,String description, List<String> urls) {
         this.title = title;
+        this.description = description;
         this.urls = urls;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getTitle() {

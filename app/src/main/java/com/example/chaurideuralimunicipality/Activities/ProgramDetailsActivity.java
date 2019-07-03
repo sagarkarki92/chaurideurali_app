@@ -1,9 +1,12 @@
 package com.example.chaurideuralimunicipality.Activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.chaurideuralimunicipality.R;
@@ -15,6 +18,9 @@ public class ProgramDetailsActivity extends AppCompatActivity implements Seriali
 
     Toolbar toolbar;
     TextView programtitle,programdetails,programDate;
+    Button seepdf;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +41,24 @@ public class ProgramDetailsActivity extends AppCompatActivity implements Seriali
         programtitle = findViewById(R.id.program_details_title);
         programdetails = findViewById(R.id.program_details_information);
         programDate=findViewById(R.id.program_details_date);
+
+        seepdf = findViewById(R.id.seepdf);
         programtitle.setText(getProgramData().getTitle());
         programdetails.setText(getProgramData().getBody());
-        programDate.setText(getProgramData().getDate());
+         programDate.setText(getProgramData().getDate());
+        final String url = getProgramData().getUrl();
+        if(url != null){
+            seepdf.setVisibility(View.VISIBLE);
+            seepdf.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                }
+            });
+        }else{
+            seepdf.setVisibility(View.GONE);
+        }
 
     }
 

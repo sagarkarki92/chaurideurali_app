@@ -32,6 +32,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    //for loading full image i.e universal image loader
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

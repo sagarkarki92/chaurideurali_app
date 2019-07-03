@@ -1,5 +1,6 @@
 package com.example.chaurideuralimunicipality.Activities;
 
+import android.app.ProgressDialog;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class ProgramActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     FirebaseDatabase database;
     DatabaseReference reference;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,16 +39,18 @@ public class ProgramActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.program_toolbar);
         toolbar.setTitle("Program");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         toolbar.setNavigationOnClickListener(   new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-
         //setting recyclerview
         recyclerView = findViewById(R.id.program_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,1));
+        recyclerView.setLayoutManager(new GridLayoutManager(ProgramActivity.this,1));
 
         //message for waiting
         Toast.makeText(ProgramActivity.this, "लोड हुँदैछ", Toast.LENGTH_SHORT).show();
@@ -57,6 +61,7 @@ public class ProgramActivity extends AppCompatActivity {
         //keeping data into recyclerview via adaptor
         ProgramAdaptor adaptor = new ProgramAdaptor(this,mlist);
         recyclerView.setAdapter(adaptor);
+        progressDialog.dismiss();
     }
 
     private void getProgramData() {
@@ -66,19 +71,19 @@ public class ProgramActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(!mlist.isEmpty()) {
+
+                if(!mlist.isEmpty()){
+
                     mlist.clear();
                 }
                 for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
                     Program program = dataSnapshot1.getValue(Program.class);
+                    mlist.add(0,program);
+
+                }
+                recyclerView.getAdapter().notifyDataSetChanged();
                     if(program!=null) {
-//
                             mlist.add(program);
-//                        System.out.println("-----------------------------");
-//                        System.out.println(program.getTitle());
-//                        System.out.println(program.getBody());
-//                        System.out.println(program.getDate());
-//                        System.out.println("-----------------------------");
                     }else{
                         Toast.makeText(ProgramActivity.this, "माफ गर्नुहोस्! कुनै प्रोग्राम डेटा छैन", Toast.LENGTH_SHORT).show();
                     }
@@ -89,7 +94,7 @@ public class ProgramActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(ProgramActivity.this,"Something Happened",Toast.LENGTH_SHORT).show();
             }
         });
     }

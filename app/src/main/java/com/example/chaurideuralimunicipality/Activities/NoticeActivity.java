@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -62,41 +63,50 @@ public class NoticeActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
 
         mlist = new ArrayList<>();
+        database = FirebaseDatabase.getInstance();
+        myrefrence = database.getReference("Notices");
         loadUrlData();
+
 
 
         adaptor = new NoticeAdaptor(NoticeActivity.this,mlist);
         recyclerView.setAdapter(adaptor);
     }
 
+
+    }
     private void loadUrlData() {
 
-
        //getting notice from database i.e now from fire base database !!!
+
         FirebaseApp.initializeApp(this);
         database = FirebaseDatabase.getInstance();
         myrefrence = database.getReference("Notices");
+
         progressDialog.dismiss();
         myrefrence.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(!mlist.isEmpty()) {
+
+                if(!mlist.isEmpty()){
                     mlist.clear();
                 }
-                  for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        Notice notice = dataSnapshot1.getValue(Notice.class);
+                        mlist.add(0,notice);
 
-                    Notice notice = dataSnapshot1.getValue(Notice.class);
-                    if(notice!=null) {
-                        mlist.add(notice);
-                    }else{
-                        Toast.makeText(NoticeActivity.this, "माफ गर्नुहोस्! सूचना डेटा छैन", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(NoticeActivity.this, "data should be seen", Toast.LENGTH_SHORT).show();
                     }
+                    adaptor = new NoticeAdaptor(getApplicationContext(), mlist);
+                    recyclerView.setAdapter(adaptor);
+                    recyclerView.smoothScrollToPosition(0);
 
+                    Notice notice = dataSnapshot.getValue(Notice.class);
+                    mlist.add(notice);
                 }
-                recyclerView.getAdapter().notifyDataSetChanged();
 
-            }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -104,8 +114,6 @@ public class NoticeActivity extends AppCompatActivity {
             }
 
         });
-
-
 
     }
 }
