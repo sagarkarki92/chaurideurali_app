@@ -255,7 +255,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:srcCompat="@drawable/chairman" />
+                    app:srcCompat="@drawable/vicechairman" />
 
                 <TextView
                     android:id="@+id/vice_president_name"
