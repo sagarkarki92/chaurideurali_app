@@ -34,7 +34,7 @@ public class Notice_details extends AppCompatActivity implements Serializable {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                onBackPressed();
             }
         });
 

@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/details_information"
-        android:text="@string/aboutus"
+        android:text="@string/about_us"
         android:gravity="center"
         android:textColor="@android:color/black"/>
 
