@@ -35,14 +35,15 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/five_dp"
 
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/five_dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/twenty_dp"
                         android:text="Name: "
                         android:textStyle="bold"
-                        android:textSize="@dimen/fifteen_dp" />
+                        android:textSize="@dimen/fifteen_sp" />
 
                     <TextView
 
@@ -50,9 +51,9 @@
                         android:layout_marginLeft="@dimen/five_dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
-                        android:textSize="@dimen/fifteen_dp"
-                        android:text="WardNumber" />
+                        android:textSize="@dimen/fifteen_sp"
+                        android:text="WardNumber"
+                        android:layout_marginStart="@dimen/five_dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -65,7 +66,7 @@
                         android:text="Population: "
 
                         android:textStyle="bold"
-                        android:textSize="@dimen/fifteen_dp" />
+                        android:textSize="@dimen/fifteen_sp" />
 
                     <TextView
                         android:id="@+id/population"
@@ -73,7 +74,7 @@
                         android:layout_marginLeft="@dimen/five_dp"
                         android:layout_height="wrap_content"
 
-                        android:textSize="@dimen/fifteen_dp"
+                        android:textSize="@dimen/fifteen_sp"
                         android:text="123123" />
                 </LinearLayout>
 
@@ -89,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:text="contact: "
                         android:textStyle="bold"
-                        android:textSize="@dimen/fifteen_dp"/>
+                        android:textSize="@dimen/fifteen_sp"/>
 
                     <TextView
 
@@ -98,7 +99,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="@dimen/five_dp"
                         android:text="32342423434"
-                        android:textSize="@dimen/fifteen_dp"
+                        android:textSize="@dimen/fifteen_sp"
                       />
                 </LinearLayout>
                     <LinearLayout
@@ -111,14 +112,14 @@
                         android:layout_height="wrap_content"
                         android:text="GeoLocation: "
                         android:textStyle="bold"
-                        android:textSize="@dimen/fifteen_dp" />
+                        android:textSize="@dimen/fifteen_sp" />
 
                     <TextView
                         android:id="@+id/latlong"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/five_dp"
-                        android:textSize="@dimen/fifteen_dp"
+                        android:textSize="@dimen/fifteen_sp"
                         android:text="123123, 345345345" />
                 </LinearLayout>
 
@@ -139,7 +140,7 @@
                     android:layout_width="match_parent"
                     android:background="@color/skyblue"
                     android:layout_height="wrap_content"
-                    android:text="People Details"
+                    android:text="@string/jnp"
                     android:textAlignment="center"
                     android:textColor="#FFF"
                     />
@@ -340,7 +341,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/teen_dp"
                 android:layout_marginTop="@dimen/twenty_dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/teen_dp">
 
                 <ImageView
                     android:id="@+id/ward_people5"
@@ -355,7 +357,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/twenty_dp"
                     android:layout_marginTop="@dimen/fifteen_dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/twenty_dp">
 
                     <TextView
                         android:id="@+id/d1"
