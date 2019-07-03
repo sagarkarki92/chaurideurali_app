@@ -1,18 +1,15 @@
 package com.example.chaurideuralimunicipality.Activities;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
+
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.example.chaurideuralimunicipality.Adaptors.NoticeAdaptor;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Notice;

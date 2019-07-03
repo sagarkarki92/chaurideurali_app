@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.chaurideuralimunicipality.Adaptors.GalleryAdaptor;
-import com.example.chaurideuralimunicipality.R;
+
 import com.example.chaurideuralimunicipality.model.Gallery;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;

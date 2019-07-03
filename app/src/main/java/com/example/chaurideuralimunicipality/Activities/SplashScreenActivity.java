@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import com.example.chaurideuralimunicipality.R;
 
-public class SplashScreenactivity extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class SplashScreenactivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreenactivity.this,MainActivity.class));
+                startActivity(new Intent(SplashScreenActivity.this,MainActivity.class));
                 finish();
             }
         },3000);

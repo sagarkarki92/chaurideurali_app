@@ -21,7 +21,7 @@
 
         <ImageView
             android:id="@+id/ward_img"
-            app:srcCompat="@drawable/ic_home_"
+            app:srcCompat="@drawable/ic_home"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
