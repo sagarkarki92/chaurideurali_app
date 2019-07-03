@@ -11,13 +11,15 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.chaurideuralimunicipality.Adaptors.GalleryAdaptor;
-import com.example.chaurideuralimunicipality.R;
+
 import com.example.chaurideuralimunicipality.model.Gallery;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,7 @@ public class GalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+
         //setting up toolbar
         toolbar = findViewById(R.id.gallery_toolbar);
         toolbar.setTitle("Gallery");
@@ -54,23 +57,30 @@ public class GalleryActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.gallery_recyclerview);
         recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this,1));
 
+        Picasso.setSingletonInstance(
+                new Picasso.Builder(this)
+                        // additional settings
+                        .build());
+
         mlist = new ArrayList<>();
+        Toast.makeText(GalleryActivity.this, "लोड हुँदैछ", Toast.LENGTH_SHORT).show();
         loadImagefromDatabase();
 
         //getting data to recyclerview
-        adaptor = new GalleryAdaptor(this,mlist);
+        adaptor = new GalleryAdaptor(GalleryActivity.this,mlist);
         recyclerView.setAdapter(adaptor);
         progressDialog.dismiss();
     }
 
     private void loadImagefromDatabase() {
-
+        FirebaseApp.initializeApp(this);
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Images");
         reference.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 //checking if list is empty or not ..to not make dublicate file while making real time update
                 if(!mlist.isEmpty()){
                     mlist.clear();
@@ -79,6 +89,7 @@ public class GalleryActivity extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
                     Gallery gallery = dataSnapshot1.getValue(Gallery.class);
                     mlist.add(0,gallery);
+
                 }
                 recyclerView.getAdapter().notifyDataSetChanged();
             }

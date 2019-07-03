@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.chaurideuralimunicipality.MainActivity2;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Notice;
 import java.io.Serializable;
@@ -17,7 +18,7 @@ import java.io.Serializable;
 public class Notice_details extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
-    TextView title,information;
+    TextView title,information,body;
     Button showpdf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class Notice_details extends AppCompatActivity implements Serializable {
         setContentView(R.layout.activity_notice_details);
         title = findViewById(R.id.notice_details_title);
         information = findViewById(R.id.notice_details_information);
+        body=findViewById(R.id.notice_details_body);
         showpdf = findViewById(R.id.showpdf);
 
         // -----------setting up toolbar
@@ -34,13 +36,18 @@ public class Notice_details extends AppCompatActivity implements Serializable {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 onBackPressed();
+=======
+                startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+>>>>>>> master
             }
         });
 
         //showing data getting from object (i.e title body and pdf to activity)
         title.setText(getNoticeData().getTitle());
-        information.setText(getNoticeData().getBody()); //getting data from object that is sent from noticeactivity
+        information.setText(getNoticeData().getBody());
+        body.setText(getNoticeData().getDate());//getting data from object that is sent from noticeactivity
         final String pdfurl = getNoticeData().getUrl();
 
         if(pdfurl != null) {

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.chaurideuralimunicipality.Adaptors.NoticeAdaptor;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Notice;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +40,9 @@ public class NoticeActivity extends AppCompatActivity {
 
         progressDialog= new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
+        Toast.makeText(NoticeActivity.this, "लोड हुँदैछ", Toast.LENGTH_SHORT).show();
+
+
         progressDialog.show();
 
         //setting up toolbar
@@ -62,15 +66,26 @@ public class NoticeActivity extends AppCompatActivity {
 
 
 
+        adaptor = new NoticeAdaptor(NoticeActivity.this,mlist);
+        recyclerView.setAdapter(adaptor);
+    }
+
+
     }
     private void loadUrlData() {
 
        //getting notice from database i.e now from fire base database !!!
+
+        FirebaseApp.initializeApp(this);
+        database = FirebaseDatabase.getInstance();
+        myrefrence = database.getReference("Notices");
+
         progressDialog.dismiss();
         myrefrence.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 if(!mlist.isEmpty()){
                     mlist.clear();
                 }
@@ -88,9 +103,11 @@ public class NoticeActivity extends AppCompatActivity {
                     mlist.add(notice);
                 }
 
+
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(),"Error Occured",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Error occured",Toast.LENGTH_SHORT).show();
             }
 
         });

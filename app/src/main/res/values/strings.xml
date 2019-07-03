@@ -3,6 +3,9 @@
     <string name="email_address">ito.chaurideuralimun@gmail.com</string>
     <string name="website">http://chaurideuralimun.gov.np</string>
     <string name="facebook_link">https://www.facebook.com/chaurideuralimun</string>
+
+    <string name="title">14sp</string>
+
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
@@ -91,6 +94,8 @@
     <!--2-->
     <string name="ward_2">वडा नं. २ नाग्रे गगर्चे</string>
     <!--3-->
+
+    <string name="ward_3">वडा नं. ३ माझीफेदा</string>
     <!--4-->
     <string name="ward_4">वडा नं. ४ धुसेनी</string>
     <!--5-->
@@ -103,7 +108,6 @@
     <string name="ward_8">वडा नं. ८ विर्ता देउराली</string>
     <!--9-->
     <string name="ward_9">वडा नं. ९ गोठपानी</string>
-
 
     <!--ward members-->
     <!--1-->
@@ -251,10 +255,13 @@
     <string name="name_95">हसनी तामाङ</string>
     <string name="number_95">९८०८००६८४५</string>
 
+    <string name="secondheader" >पदाधिकारी</string>
     <!--pd details-->
     <!--pd1-->
     <string name="pd1_name">बलराम लम्साल</string>
     <string name="pd1_post">प्रमुख प्रशासकीय अधिकृत</string>
+    <string name="pd1_email">Not Availabel</string>
+    <string name="pd1_number">Not Availabel</string>
     <!--pd2-->
 
     <string name="pd2_name">महान दास लामा</string>
@@ -265,6 +272,8 @@
 
     <string name="pd3_name">सालिकराम नेपाल</string>
     <string name="pd3_post">ना.सु</string>
+    <string name="pd3_email">Not Availabel</string>
+
     <string name="pd3_number">९८४१५०२९४१</string>
     <!--pd4-->
     <string name="pd4_name">ध्रुव प्रसाद गौतम</string>
@@ -284,32 +293,42 @@
     <!--pd7-->
     <string name="pd7_name">विजय कुमार थापा</string>
     <string name="pd7_post">प.स्वा.प्रा</string>
+
+    <string name="pd7_email">Not Availabel</string>
+
     <string name="pd7_number">९८४३४९३१९०</string>
     <!--pd8-->
     <string name="pd8_name">दिवश श्रेष्‍ठ</string>
     <string name="pd8_post">ना.सु</string>
+
 
     <!--pd10-->
 
     <string name="pd9_name">कपिलदेव दाहाल</string>
     <string name="pd9_post">खरिदार</string>
 
-    <!--p11-->
-    <string name="pd10_name">प्रमिला गौतम</string>
-    <string name="pd10_post">कम्‍प्युटर सहायक</string>
-    <string name="pd10_email">pramilagautam5842@gmail.com</string>
-    <string name="pd10_number">९८४९१५५८४२</string>
-    <!--p12-->
-    <string name="pd11_name">निर्मल वावु खड्का</string>
-    <string name="pd11_post">सव इन्जिनियर</string>
-    <string name="pd11_email">khadkanirmal31@gmail.com</string>
-    <string name="pd11_number">९८४९६१९३३७</string>
-    <!--p13-->
-    <string name="pd12_name">कृष्‍ण भण्डारी</string>
-    <string name="pd12_post">सव इन्जिनियर</string>
-    <string name="pd12_number">९८४१३२२४१२</string>
-    <string name="todo">TODO</string>
-    <string name="about_us">
+    <!--&lt;!&ndash;p11&ndash;&gt;-->
+    <!--<string name="pd10_name">प्रमिला गौतम</string>-->
+    <!--<string name="pd10_post">कम्‍प्युटर सहायक</string>-->
+    <!--<string name="pd10_email">pramilagautam5842@gmail.com</string>-->
+    <!--<string name="pd10_number">९८४९१५५८४२</string>-->
+    <!--&lt;!&ndash;p12&ndash;&gt;-->
+    <!--<string name="pd11_name">निर्मल वावु खड्का</string>-->
+    <!--<string name="pd11_post">सव इन्जिनियर</string>-->
+    <!--<string name="pd11_email">khadkanirmal31@gmail.com</string>-->
+    <!--<string name="pd11_number">९८४९६१९३३७</string>-->
+    <!--&lt;!&ndash;p13&ndash;&gt;-->
+    <!--<string name="pd12_name">कृष्‍ण भण्डारी</string>-->
+    <!--<string name="pd12_post">सव इन्जिनियर</string>-->
+    <!--<string name="pd12_number">९८४१३२२४१२</string>-->
+    <!--<string name="todo">TODO</string>-->
+    <!--<string name="about_us">-->
+
+    <!--<string name="pd8_email">Not Availabel</string>-->
+    <!--<string name="pd8_number">Not Availabel</string>-->
+    <!--About us -->
+    <string name="aboutus">
+
         काभ्रेपलाञ्चोक जिल्ला अन्तर्गत साविक ८७ वटा गा.वि.स. र ५ वटा
         नगरपालिकालाई पुर्नसंरचना गरी हाल निर्मित ६ वटा नगरपालिका र ७ वटा गाउँपालिका
         सहित १३ वटा स्थानीय तहमध्येे  पूर्वमा चौंरीखोला पारी रहेको रामेछापको सुनपाती
@@ -327,8 +346,24 @@
         देउरालीहरु समेत रहेको हुँदा चौंरी र देउराली जोडेर यस गाउँपालिकाको नाम
         चौंरीदेउराली रहेको छ।
     </string>
-
-
+    <!--p10-->
+    <string name="pd10_name">प्रमिला गौतम</string>
+    <string name="pd10_post">कम्‍प्युटर सहायक</string>
+    <string name="pd10_email">pramilagautam5842@gmail.com</string>
+    <string name="pd10_number">९८४९१५५८४२</string>
+    <!--p11-->
+    <string name="pd11_name">निर्मल वावु खड्का</string>
+    <string name="pd11_post">सव इन्जिनियर</string>
+    <string name="pd11_email">khadkanirmal31@gmail.com</string>
+    <string name="pd11_number">९८४९६१९३३७</string>
+    <!--p12-->
+    <string name="pd12_name">कृष्‍ण भण्डारी</string>
+    <string name="pd12_post">सव इन्जिनियर</string>
+    <string name="pd12_email">Not Availabel</string>
+    <string name="pd12_number">९८४१३२२४१२</string>
+    <string name="todo">TODO</string>
+    <string name="contact_number_here">Contact number here !!</string>
+    <string name="jnp">जन प्रतिनिधि</string>
 </resources>
 
 

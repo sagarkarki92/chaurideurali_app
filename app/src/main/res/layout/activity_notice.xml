@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.NoticeActivity"
+    tools:context="com.example.chaurideuralimunicipality.Activities.NoticeActivity"
     android:orientation="vertical"
     android:background="#cdcdcd">
 

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Activities.Contact_us"
+tools:context="com.example.chaurideuralimunicipality.Activities.Contact_us"
     android:orientation="vertical">
 
     <include
@@ -20,6 +20,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+
             android:padding="@dimen/teen_dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -152,12 +154,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/colorPrimary" />
-                <!--<ImageView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="200dp"-->
-                <!--android:layout_weight="1"-->
-                <!--app:srcCompat="@drawable/map" />-->
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
