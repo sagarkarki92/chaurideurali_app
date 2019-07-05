@@ -26,7 +26,7 @@ public class WardDetailsPagerAdapter extends FragmentPagerAdapter {
         return mlist.size();
     }
 
-    public void addFragment(Fragment fragment){
+    public void addFragment(Fragment fragment) {
 
         mlist.add(fragment);   //adding fragment to arraylist sending from warddetailsactivity
     }

@@ -9,7 +9,6 @@
 
     </style>
 
-
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:textColorPrimary">@android:color/white
         </item>       <!-- text color of toolbar-->

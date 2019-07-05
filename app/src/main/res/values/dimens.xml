@@ -18,7 +18,7 @@
     <dimen name="five_dp">5dp</dimen>
     <dimen name="teen_dp">10dp</dimen>
     <dimen name="fifteen_dp">15dp</dimen>
-    <dimen name ="twenty_dp">20dp</dimen>
+    <dimen name="twenty_dp">20dp</dimen>
     <dimen name="people_img">96dp</dimen>
 
     <dimen name="seventy_dp">70</dimen>

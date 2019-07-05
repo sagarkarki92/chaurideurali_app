@@ -17,7 +17,7 @@ import com.example.chaurideuralimunicipality.model.Notice;
 import java.io.Serializable;
 import java.util.List;
 
-public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeViewHolder> implements Serializable{
+public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeViewHolder> implements Serializable {
 
     private Context mcontext;
     private List<Notice> mlist;
@@ -32,7 +32,7 @@ public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeView
     public NoticeViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         LayoutInflater inflater = LayoutInflater.from(mcontext);
-        View view = inflater.inflate(R.layout.list_item,null);
+        View view = inflater.inflate(R.layout.list_item, null);
         return new NoticeViewHolder(view);
     }
 
@@ -50,14 +50,12 @@ public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeView
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mcontext, Notice_details.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("notice", notice);
                 mcontext.startActivity(intent);
                 //yesbata notice ko object pathaera arko details activity ma  object tanni and getTitle getbody garera display garauni
             }
         });
-
-
-
     }
 
     @Override
@@ -65,15 +63,16 @@ public class NoticeAdaptor extends RecyclerView.Adapter<NoticeAdaptor.NoticeView
         return mlist.size();
     }
 
-    public class NoticeViewHolder extends RecyclerView.ViewHolder{
+    public class NoticeViewHolder extends RecyclerView.ViewHolder {
 
-        TextView title,pubdate;
+        TextView title, pubdate;
         LinearLayout linearLayout;
+
         public NoticeViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
             pubdate = itemView.findViewById(R.id.pub_date);
-            linearLayout = itemView.findViewById(R.id.item_list );
+            linearLayout = itemView.findViewById(R.id.item_list);
         }
     }
 }

@@ -10,6 +10,7 @@ import com.squareup.picasso.Picasso;
 public class FullScreenActivity extends AppCompatActivity {
 
     ImageView fullimage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

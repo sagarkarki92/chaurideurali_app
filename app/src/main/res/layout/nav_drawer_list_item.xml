@@ -12,7 +12,7 @@
         android:layout_height="20dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        app:srcCompat="@drawable/ic_home_"
+
         />
 
     <TextView

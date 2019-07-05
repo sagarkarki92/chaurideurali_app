@@ -12,21 +12,23 @@ import android.widget.TextView;
 import com.example.chaurideuralimunicipality.MainActivity2;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Notice;
+
 import java.io.Serializable;
 
 
 public class Notice_details extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
-    TextView title,information,body;
+    TextView title, information, body;
     Button showpdf;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice_details);
         title = findViewById(R.id.notice_details_title);
         information = findViewById(R.id.notice_details_information);
-        body=findViewById(R.id.notice_details_body);
+        body = findViewById(R.id.notice_details_body);
         showpdf = findViewById(R.id.showpdf);
 
         // -----------setting up toolbar
@@ -36,11 +38,8 @@ public class Notice_details extends AppCompatActivity implements Serializable {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
                 onBackPressed();
-=======
-                startActivity(new Intent(getApplicationContext(), MainActivity2.class));
->>>>>>> master
+//                startActivity(new Intent(getApplicationContext(), MainActivity2.class));
             }
         });
 
@@ -50,7 +49,7 @@ public class Notice_details extends AppCompatActivity implements Serializable {
         body.setText(getNoticeData().getDate());//getting data from object that is sent from noticeactivity
         final String pdfurl = getNoticeData().getUrl();
 
-        if(pdfurl != null) {
+        if (pdfurl != null) {
 
             showpdf.setVisibility(View.VISIBLE);
             showpdf.setOnClickListener(new View.OnClickListener() {
@@ -60,13 +59,14 @@ public class Notice_details extends AppCompatActivity implements Serializable {
                     startActivity(intent);
                 }
             });
-        }else{
+        } else {
             showpdf.setVisibility(View.GONE);
         }
 
 
     }
-    public Notice getNoticeData(){
+
+    public Notice getNoticeData() {
         Notice notice = (Notice) getIntent().getSerializableExtra("notice");
         return notice;
     }

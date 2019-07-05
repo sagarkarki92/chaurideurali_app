@@ -16,5 +16,4 @@
             app:srcCompat="@mipmap/cover" />
     </RelativeLayout>
 
-
 </LinearLayout>

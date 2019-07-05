@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,35 +39,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,drawerLayout ,toolbar,
-                R.string.drawer_open,R.string.drawer_close); //draweropen and drawerclose is hardcoded in string and making drawer responsive
+        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.drawer_open, R.string.drawer_close); //draweropen and drawerclose is hardcoded in string and making drawer responsive
 
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();  //syncstate links drawer icon in toolbar with drawerlayout
 
     }
 
-    public void showNotice(View v){
+    public void showNotice(View v) {
         startingActivity(NoticeActivity.class);
 
     }
-    public void showAbout(View v){
+
+    public void showAbout(View v) {
         startingActivity(About_us.class);
 
     }
 
-    public void showGallery(View v){
+    public void showGallery(View v) {
         startingActivity(GalleryActivity.class);
 
     }
-    public void showProgram(View v){
+
+    public void showProgram(View v) {
         startingActivity(ProgramActivity.class);
 
     }
-    public void showWard(View v){
+
+    public void showWard(View v) {
         startingActivity(WardActivity.class);
     }
-    public void showContact(View v){
+
+    public void showContact(View v) {
         startingActivity(Contact_us.class);
     }
 
@@ -78,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //drawer item click listener setting up
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.nav_home:
                 hideDrawer();
                 break;
@@ -110,20 +115,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     //opening drawer
-    private void showDrawer(){
+    private void showDrawer() {
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
     //close Drawer
-    private void hideDrawer(){
+    private void hideDrawer() {
         drawerLayout.closeDrawer(GravityCompat.START);
     }
 
     @Override
     public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             hideDrawer();
-        }else {
+        } else {
             super.onBackPressed();
         }
     }

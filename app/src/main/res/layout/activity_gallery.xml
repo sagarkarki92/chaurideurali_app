@@ -4,20 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chaurideuralimunicipality.Activities.GalleryActivity"
+    android:background="#cdcdcd"
     android:orientation="vertical"
-    android:background="#cdcdcd">
+    tools:context="com.example.chaurideuralimunicipality.Activities.GalleryActivity">
 
     <include
         android:id="@+id/gallery_toolbar"
-        layout="@layout/toolbar"/>
-
-
+        layout="@layout/toolbar" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/gallery_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

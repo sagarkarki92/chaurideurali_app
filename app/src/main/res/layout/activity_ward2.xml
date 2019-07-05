@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
     <include
         android:id="@+id/ward2_toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-<!--container-->
+        android:layout_height="match_parent">
+        <!--container-->
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
 
             <!--ward details start-->
@@ -29,53 +27,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <LinearLayout
 
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/five_dp"
+                    android:layout_marginStart="@dimen/five_dp"
 
-                    android:orientation="horizontal"
-                    android:layout_marginStart="@dimen/five_dp">
+                    android:layout_marginLeft="@dimen/five_dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/twenty_dp"
                         android:text="Name: "
-                        android:textStyle="bold"
-                        android:textSize="@dimen/fifteen_sp" />
+                        android:textSize="@dimen/fifteen_sp"
+                        android:textStyle="bold" />
 
                     <TextView
 
                         android:id="@+id/wardtitle"
-                        android:layout_marginLeft="@dimen/five_dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/fifteen_sp"
+                        android:layout_marginStart="@dimen/five_dp"
+                        android:layout_marginLeft="@dimen/five_dp"
                         android:text="WardNumber"
-                        android:layout_marginStart="@dimen/five_dp" />
+                        android:textSize="@dimen/fifteen_sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/five_dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Population: "
 
-                        android:textStyle="bold"
-                        android:textSize="@dimen/fifteen_sp" />
+                        android:textSize="@dimen/fifteen_sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/population"
                         android:layout_width="wrap_content"
-                        android:layout_marginLeft="@dimen/five_dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/five_dp"
 
-                        android:textSize="@dimen/fifteen_sp"
-                        android:text="123123" />
+                        android:text="123123"
+                        android:textSize="@dimen/fifteen_sp" />
                 </LinearLayout>
 
 
@@ -89,8 +90,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="contact: "
-                        android:textStyle="bold"
-                        android:textSize="@dimen/fifteen_sp"/>
+                        android:textSize="@dimen/fifteen_sp"
+                        android:textStyle="bold" />
 
                     <TextView
 
@@ -99,30 +100,30 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="@dimen/five_dp"
                         android:text="32342423434"
-                        android:textSize="@dimen/fifteen_sp"
-                      />
+                        android:textSize="@dimen/fifteen_sp" />
                 </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/five_dp"
-                        android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/five_dp"
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="GeoLocation: "
-                        android:textStyle="bold"
-                        android:textSize="@dimen/fifteen_sp" />
+                        android:textSize="@dimen/fifteen_sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/latlong"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/five_dp"
-                        android:textSize="@dimen/fifteen_sp"
-                        android:text="123123, 345345345" />
+                        android:text="123123, 345345345"
+                        android:textSize="@dimen/fifteen_sp" />
                 </LinearLayout>
-
 
 
             </LinearLayout>
@@ -135,15 +136,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:textSize="@dimen/title"
-                    android:layout_marginTop="@dimen/five_dp"
                     android:layout_width="match_parent"
-                    android:background="@color/skyblue"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/five_dp"
+                    android:background="@color/skyblue"
                     android:text="@string/jnp"
                     android:textAlignment="center"
                     android:textColor="#FFF"
-                    />
+                    android:textSize="@dimen/title" />
                 <!--1-->
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -151,240 +151,241 @@
                     android:layout_marginLeft="@dimen/teen_dp"
                     android:layout_marginTop="@dimen/fifteen_dp"
                     android:orientation="horizontal">
-                <ImageView
-                    android:id="@+id/ward_people1"
-                    android:layout_width="@dimen/people_img"
-                    android:layout_height="@dimen/people_img"
-                    android:src="@drawable/broken" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty_dp"
-                    android:layout_marginTop="@dimen/fifteen_dp"
-                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/ward_people1"
+                        android:layout_width="@dimen/people_img"
+                        android:layout_height="@dimen/people_img"
+                        android:src="@drawable/broken" />
 
-                    <TextView
-                        android:id="@+id/a1"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textColor="@color/skyblue"
-                        android:textSize="@dimen/title" />
+                        android:layout_marginLeft="@dimen/twenty_dp"
+                        android:layout_marginTop="@dimen/fifteen_dp"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/a2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/a1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@color/skyblue"
+                            android:textSize="@dimen/title" />
 
-                    <TextView
-                        android:id="@+id/a3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/a2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/a3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
                 <!--1-->
-<!--2-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/teen_dp"
-                android:layout_marginTop="@dimen/twenty_dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/ward_people2"
-                    android:layout_width="@dimen/people_img"
-                    android:layout_height="@dimen/people_img"
-
-                    android:src="@drawable/broken" />
-
-                <LinearLayout
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty_dp"
-                    android:layout_marginTop="@dimen/fifteen_dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/e1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textColor="@color/skyblue"
-                        android:textSize="@dimen/title" />
-
-                    <TextView
-                        android:id="@+id/e2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/e3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
                 <!--2-->
-<!--3-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/teen_dp"
-                android:layout_marginTop="@dimen/twenty_dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/ward_people3"
-                    android:layout_width="@dimen/people_img"
-                    android:layout_height="@dimen/people_img"
-
-                    android:src="@drawable/broken" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty_dp"
-                    android:layout_marginTop="@dimen/fifteen_dp"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="@dimen/teen_dp"
+                    android:layout_marginTop="@dimen/twenty_dp"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/b1"
+                    <ImageView
+                        android:id="@+id/ward_people2"
+                        android:layout_width="@dimen/people_img"
+                        android:layout_height="@dimen/people_img"
+
+                        android:src="@drawable/broken" />
+
+                    <LinearLayout
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textColor="@color/skyblue"
-                        android:textSize="@dimen/title" />
+                        android:layout_marginLeft="@dimen/twenty_dp"
+                        android:layout_marginTop="@dimen/fifteen_dp"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/b2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/e1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@color/skyblue"
+                            android:textSize="@dimen/title" />
 
-                    <TextView
-                        android:id="@+id/b3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/e2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/e3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+                <!--2-->
                 <!--3-->
-<!--4-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/teen_dp"
-                android:layout_marginTop="@dimen/twenty_dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/ward_people4"
-                    android:layout_width="@dimen/people_img"
-                    android:layout_height="@dimen/people_img"
-
-                    android:src="@drawable/broken" />
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty_dp"
-                    android:layout_marginTop="@dimen/fifteen_dp"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="@dimen/teen_dp"
+                    android:layout_marginTop="@dimen/twenty_dp"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/c1"
+                    <ImageView
+                        android:id="@+id/ward_people3"
+                        android:layout_width="@dimen/people_img"
+                        android:layout_height="@dimen/people_img"
+
+                        android:src="@drawable/broken" />
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textColor="@color/skyblue"
-                        android:textSize="@dimen/title" />
+                        android:layout_marginLeft="@dimen/twenty_dp"
+                        android:layout_marginTop="@dimen/fifteen_dp"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/c2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/b1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@color/skyblue"
+                            android:textSize="@dimen/title" />
 
-                    <TextView
-                        android:id="@+id/c3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/b2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/b3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+                <!--3-->
                 <!--4-->
-<!--5-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/teen_dp"
-                android:layout_marginTop="@dimen/twenty_dp"
-                android:orientation="horizontal"
-                android:layout_marginStart="@dimen/teen_dp">
-
-                <ImageView
-                    android:id="@+id/ward_people5"
-                    android:layout_width="@dimen/people_img"
-                    android:layout_height="@dimen/people_img"
-
-                    android:src="@drawable/broken" />
-
                 <LinearLayout
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty_dp"
-                    android:layout_marginTop="@dimen/fifteen_dp"
-                    android:orientation="vertical"
-                    android:layout_marginStart="@dimen/twenty_dp">
+                    android:layout_marginLeft="@dimen/teen_dp"
+                    android:layout_marginTop="@dimen/twenty_dp"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/d1"
+                    <ImageView
+                        android:id="@+id/ward_people4"
+                        android:layout_width="@dimen/people_img"
+                        android:layout_height="@dimen/people_img"
+
+                        android:src="@drawable/broken" />
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textColor="@color/skyblue"
-                        android:textSize="@dimen/title" />
+                        android:layout_marginLeft="@dimen/twenty_dp"
+                        android:layout_marginTop="@dimen/fifteen_dp"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/d2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/c1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@color/skyblue"
+                            android:textSize="@dimen/title" />
 
-                    <TextView
-                        android:id="@+id/d3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/c2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/c3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+                <!--4-->
+                <!--5-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/teen_dp"
+                    android:layout_marginLeft="@dimen/teen_dp"
+                    android:layout_marginTop="@dimen/twenty_dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ward_people5"
+                        android:layout_width="@dimen/people_img"
+                        android:layout_height="@dimen/people_img"
+
+                        android:src="@drawable/broken" />
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/twenty_dp"
+                        android:layout_marginLeft="@dimen/twenty_dp"
+                        android:layout_marginTop="@dimen/fifteen_dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/d1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@color/skyblue"
+                            android:textSize="@dimen/title" />
+
+                        <TextView
+                            android:id="@+id/d2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/d3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textSize="@dimen/subtitle"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
                 <!--5-->
             </LinearLayout>
             <!--end people details-->

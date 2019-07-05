@@ -8,6 +8,7 @@ import android.view.View;
 
 public class WardList extends AppCompatActivity {
     Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +17,7 @@ public class WardList extends AppCompatActivity {
         toolbar.setTitle("Ward List");
 
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
-        toolbar.setNavigationOnClickListener(   new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -24,7 +25,7 @@ public class WardList extends AppCompatActivity {
         });
     }
 
-    public void Ward1(View V){
+    public void Ward1(View V) {
         Intent intent = new Intent(this, Ward.class);
 
         String message = "1";
@@ -33,7 +34,8 @@ public class WardList extends AppCompatActivity {
 
 
     }
-    public void Ward2(View v){
+
+    public void Ward2(View v) {
         Intent intent = new Intent(this, Ward.class);
 
         String message = "2";
@@ -42,7 +44,8 @@ public class WardList extends AppCompatActivity {
 
 
     }
-    public void Ward3(View v){
+
+    public void Ward3(View v) {
         Intent intent = new Intent(this, Ward.class);
 
         String message = "3";
@@ -51,7 +54,8 @@ public class WardList extends AppCompatActivity {
 
 
     }
-    public void Ward4(View v){
+
+    public void Ward4(View v) {
         Intent intent = new Intent(this, Ward.class);
 
         String message = "4";
@@ -60,7 +64,8 @@ public class WardList extends AppCompatActivity {
 
 
     }
-    public void Ward5(View v){
+
+    public void Ward5(View v) {
         Intent intent = new Intent(this, Ward.class);
 
         String message = "5";
@@ -69,7 +74,8 @@ public class WardList extends AppCompatActivity {
 
 
     }
-    public void Ward6(View v){
+
+    public void Ward6(View v) {
         Intent intent = new Intent(this, Ward.class);
 
         String message = "6";
@@ -78,7 +84,8 @@ public class WardList extends AppCompatActivity {
 
 
     }
-    public void Ward7(View v){
+
+    public void Ward7(View v) {
         Intent intent = new Intent(this, Ward.class);
 
         String message = "7";
@@ -87,7 +94,8 @@ public class WardList extends AppCompatActivity {
 
 
     }
-    public void Ward8(View v){
+
+    public void Ward8(View v) {
         Intent intent = new Intent(this, Ward.class);
 
         String message = "8";
@@ -96,7 +104,8 @@ public class WardList extends AppCompatActivity {
 
 
     }
-    public void Ward9(View v){
+
+    public void Ward9(View v) {
         Intent intent = new Intent(this, Ward.class);
 
         String message = "9";

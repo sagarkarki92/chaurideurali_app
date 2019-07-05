@@ -19,9 +19,10 @@ import java.util.List;
 public class GalleryDetails extends AppCompatActivity implements Serializable {
 
     Toolbar toolbar;
-    TextView title,description;
+    TextView title, description;
     RecyclerView recyclerView;
     GalleryDetailsAdaptor adaptor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,15 +46,15 @@ public class GalleryDetails extends AppCompatActivity implements Serializable {
 
         //setting up recycler view
         recyclerView = findViewById(R.id.photo_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
         //setting adaptor to recycler view
-        adaptor = new GalleryDetailsAdaptor(this,getgalleryObject());
+        adaptor = new GalleryDetailsAdaptor(this, getgalleryObject());
         recyclerView.setAdapter(adaptor);
 
     }
 
-    public Gallery getgalleryObject(){
+    public Gallery getgalleryObject() {
         Gallery gallery = (Gallery) getIntent().getSerializableExtra("galleryobject");
         return gallery;
     }

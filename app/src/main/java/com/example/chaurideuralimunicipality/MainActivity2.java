@@ -25,9 +25,10 @@ import com.example.chaurideuralimunicipality.Activities.WardActivity;
 public class MainActivity2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     Toolbar toolbar;
-//    GridLayout maingrid;
+    //    GridLayout maingrid;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,46 +50,50 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this,drawerLayout ,toolbar,
-                R.string.drawer_open,R.string.drawer_close); //draweropen and drawerclose is hardcoded in string and making drawer responsive
+        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.drawer_open, R.string.drawer_close); //draweropen and drawerclose is hardcoded in string and making drawer responsive
 
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();  //syncstate links drawer icon in toolbar with drawerlayout
 
     }
 
-    public void showNotice(View v){
+    public void showNotice(View v) {
         Intent intent = new Intent(this, NoticeActivity.class);
         startActivity(intent);
 
     }
-    public void showAbout(View v){
+
+    public void showAbout(View v) {
         Intent intent = new Intent(this, About_us.class);
         startActivity(intent);
 
     }
 
-    public void showGallery(View v){
+    public void showGallery(View v) {
         Intent intent = new Intent(this, GalleryActivity.class);
         startActivity(intent);
 
     }
-    public void showProgram(View v){
+
+    public void showProgram(View v) {
         Intent intent = new Intent(this, ProgramActivity.class);
         startActivity(intent);
 
     }
-    public void showWard(View v){
+
+    public void showWard(View v) {
         Intent intent = new Intent(this, WardList.class);
         startActivity(intent);
 
     }
-    public void showcontact(View v){
+
+    public void showcontact(View v) {
         Intent intent = new Intent(this, Contact_us.class);
         startActivity(intent);
     }
 
-//    //makinggrid item clickable
+    //    //makinggrid item clickable
 //    private void gridClickActivated() {
 //
 //        for(int i = 0;i<maingrid.getChildCount();i++){
@@ -128,7 +133,7 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
     //drawer item click listener setting up
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        switch (menuItem.getItemId()){
+        switch (menuItem.getItemId()) {
             case R.id.nav_home:
                 hideDrawer();
                 break;
@@ -160,20 +165,20 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
     }
 
     //opening drawer
-    private void showDrawer(){
+    private void showDrawer() {
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
     //close Drawer
-    private void hideDrawer(){
+    private void hideDrawer() {
         drawerLayout.closeDrawer(GravityCompat.START);
     }
 
     @Override
     public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             hideDrawer();
-        }else {
+        } else {
             super.onBackPressed();
         }
     }

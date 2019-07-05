@@ -5,241 +5,263 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chaurideuralimunicipality.Activities.WardActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.chaurideuralimunicipality.Activities.WardActivity">
 
 
     <include
         android:id="@+id/ward_list_toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:padding="@dimen/teen_dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:orientation="vertical" >
-           
+            android:orientation="vertical"
+            android:padding="@dimen/teen_dp">
+
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                app:srcCompat="@drawable/map"
-                android:scaleType="center"/>
+                android:scaleType="center"
+                app:srcCompat="@drawable/map" />
 
             <LinearLayout
-                android:layout_margin="@dimen/teen_dp"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_margin="@dimen/teen_dp"
                 android:layout_weight="1"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:onClick="Ward1">
+                    android:onClick="Ward1"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/wardOne"
                         android:layout_width="match_parent"
                         android:layout_height="96dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/wardscircle"
-                        />
+                        app:srcCompat="@drawable/wardscircle" />
 
                     <TextView
-                        android:layout_height="wrap_content"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/ward_1"
                         android:textAlignment="center"
-                        android:textSize="@dimen/subtitle"/>
+                        android:textSize="@dimen/subtitle" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:onClick="Ward2">
+                    android:onClick="Ward2"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/wardTwo"
                         android:layout_width="match_parent"
                         android:layout_height="96dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/wardscircle"
+                        android:text="@string/ward_2"
 
-                        android:text="@string/ward_2"/>
+                        app:srcCompat="@drawable/wardscircle" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/ward_2"
                         android:textAlignment="center"
-                        android:textSize="@dimen/subtitle"/>
+                        android:textSize="@dimen/subtitle" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:onClick="Ward3">
+                    android:onClick="Ward3"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/wardThree"
                         android:layout_width="match_parent"
                         android:layout_height="96dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/wardscircle"
-                        />
+                        app:srcCompat="@drawable/wardscircle" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/ward_4"
                         android:textAlignment="center"
-                        android:textSize="@dimen/subtitle"/>
+                        android:textSize="@dimen/subtitle" />
                 </LinearLayout>
             </LinearLayout>
             <!--//-->
 
             <LinearLayout
-                android:layout_margin="@dimen/teen_dp"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_margin="@dimen/teen_dp"
                 android:layout_weight="1"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:onClick="Ward4">
+                    android:onClick="Ward4"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/wardFour"
                         android:layout_width="wrap_content"
                         android:layout_height="96dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/wardscircle"
-                        />
+                        app:srcCompat="@drawable/wardscircle" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/ward_4"
-                        android:textSize="@dimen/subtitle"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="@dimen/subtitle" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:onClick="Ward5">
+                    android:onClick="Ward5"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/wardFive"
                         android:layout_width="wrap_content"
                         android:layout_height="96dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/wardscircle"
                         android:onClick="Ward5"
-                        />
+                        app:srcCompat="@drawable/wardscircle" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/ward_5"
-                        android:textSize="@dimen/subtitle"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="@dimen/subtitle" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_weight="1"
-                    android:onClick="Ward6">
+                    android:onClick="Ward6"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/wardSix"
                         android:layout_width="wrap_content"
                         android:layout_height="96dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/wardscircle"
                         android:onClick="Ward6"
-                        android:text="@string/ward_6"/>
+                        android:text="@string/ward_6"
+                        app:srcCompat="@drawable/wardscircle" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/ward_6"
-                        android:textSize="@dimen/subtitle"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="@dimen/subtitle" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
-                android:layout_margin="@dimen/teen_dp"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
+                android:layout_margin="@dimen/teen_dp"
                 android:layout_weight="1"
 
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:onClick="Ward7">
+                    android:layout_weight="1"
+                    android:onClick="Ward7"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/wardSeven"
                         android:layout_width="wrap_content"
                         android:layout_height="96dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/wardscircle"
-                        android:text="@string/ward_7"/>
+                        android:text="@string/ward_7"
+                        app:srcCompat="@drawable/wardscircle" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/ward_7"
-                        android:textSize="@dimen/subtitle"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="@dimen/subtitle" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:onClick="Ward8">
+                    android:onClick="Ward8"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/wardEight"
                         android:layout_width="wrap_content"
                         android:layout_height="96dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/wardscircle"
-                        android:text="@string/ward_8"/>
+                        android:text="@string/ward_8"
+                        app:srcCompat="@drawable/wardscircle" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/ward_8"
-                        android:textSize="@dimen/subtitle"
                         android:textAlignment="center"
-                        />
+                        android:textSize="@dimen/subtitle" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:onClick="Ward9">
+                    android:layout_weight="1"
+                    android:onClick="Ward9"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/Nine"
                         android:layout_width="wrap_content"
                         android:layout_height="96dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/wardscircle"
                         android:onClick="Ward9"
-                        android:text="@string/ward_9"/>
+                        android:text="@string/ward_9"
+                        app:srcCompat="@drawable/wardscircle" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/ward_9"
-                        android:textSize="@dimen/subtitle"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="@dimen/subtitle" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

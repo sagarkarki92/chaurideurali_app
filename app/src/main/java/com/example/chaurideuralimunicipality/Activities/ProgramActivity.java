@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.chaurideuralimunicipality.Adaptors.ProgramAdaptor;
 import com.example.chaurideuralimunicipality.R;
+import com.example.chaurideuralimunicipality.model.Notice;
 import com.example.chaurideuralimunicipality.model.Program;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +32,8 @@ public class ProgramActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     ProgressDialog progressDialog;
+    ProgramAdaptor adaptor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,7 @@ public class ProgramActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
         progressDialog.show();
-        toolbar.setNavigationOnClickListener(   new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -50,7 +53,7 @@ public class ProgramActivity extends AppCompatActivity {
         });
         //setting recyclerview
         recyclerView = findViewById(R.id.program_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(ProgramActivity.this,1));
+        recyclerView.setLayoutManager(new GridLayoutManager(ProgramActivity.this, 1));
 
         //message for waiting
         Toast.makeText(ProgramActivity.this, "लोड हुँदैछ", Toast.LENGTH_SHORT).show();
@@ -59,7 +62,7 @@ public class ProgramActivity extends AppCompatActivity {
         getProgramData();
 
         //keeping data into recyclerview via adaptor
-        ProgramAdaptor adaptor = new ProgramAdaptor(this,mlist);
+        adaptor = new ProgramAdaptor(ProgramActivity.this, mlist);
         recyclerView.setAdapter(adaptor);
         progressDialog.dismiss();
     }
@@ -71,30 +74,41 @@ public class ProgramActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                if(!mlist.isEmpty()){
-
-                    mlist.clear();
-                }
-                for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                    Program program = dataSnapshot1.getValue(Program.class);
-                    mlist.add(0,program);
-
-                }
-                recyclerView.getAdapter().notifyDataSetChanged();
-                    if(program!=null) {
-                            mlist.add(program);
-                    }else{
-                        Toast.makeText(ProgramActivity.this, "माफ गर्नुहोस्! कुनै प्रोग्राम डेटा छैन", Toast.LENGTH_SHORT).show();
+                if (dataSnapshot.exists()) {
+                    if (!mlist.isEmpty()) {
+                        mlist.clear();
                     }
-                }
+
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        Program program = dataSnapshot1.getValue(Program.class);
+
+                        if (program != null) {
+
+                            mlist.add(0, program);
+                        } else {
+                            Toast.makeText(ProgramActivity.this, "माफ गर्नुहोस्! \n" +
+                                    "अहिलेको लागि, डाटाबेसमा कुनै कार्यक्रमको डेटा", Toast.LENGTH_SHORT).show();
+                        }
+                    }
 
                     recyclerView.getAdapter().notifyDataSetChanged();
+                    adaptor = new ProgramAdaptor(getApplicationContext(), mlist);
+                    recyclerView.setAdapter(adaptor);
+                    recyclerView.smoothScrollToPosition(0);
+                } else {
+                    Toast.makeText(ProgramActivity.this, "माफ गर्नुहोस्! \n" +
+                            "अहिलेको लागि, डाटाबेस सिर्जना गरिएको छैन", Toast.LENGTH_SHORT).show();
+
+                }
+
+                //Program program = dataSnapshot.getValue(Program.class);
+                //mlist.add(program);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(ProgramActivity.this,"Something Happened",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "\n" +
+                        "इंटरनेट को प्रॉब्लम भयो", Toast.LENGTH_SHORT).show();
             }
         });
     }

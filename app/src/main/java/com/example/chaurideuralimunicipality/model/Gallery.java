@@ -8,8 +8,10 @@ public class Gallery implements Serializable {
     private String description;
     private List<String> urls;
 
-    public Gallery(){}
-    public Gallery(String title,String description, List<String> urls) {
+    public Gallery() {
+    }
+
+    public Gallery(String title, String description, List<String> urls) {
         this.title = title;
         this.description = description;
         this.urls = urls;

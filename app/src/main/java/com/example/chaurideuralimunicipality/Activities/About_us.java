@@ -10,6 +10,7 @@ import com.example.chaurideuralimunicipality.R;
 public class About_us extends AppCompatActivity {
 
     Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

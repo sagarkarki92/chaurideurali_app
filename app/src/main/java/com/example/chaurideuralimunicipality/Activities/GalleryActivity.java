@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.chaurideuralimunicipality.Adaptors.GalleryAdaptor;
 
+import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Gallery;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +34,7 @@ public class GalleryActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +57,7 @@ public class GalleryActivity extends AppCompatActivity {
 
         //setting up recyclerview
         recyclerView = findViewById(R.id.gallery_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this,1));
+        recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this, 1));
 
         Picasso.setSingletonInstance(
                 new Picasso.Builder(this)
@@ -67,7 +69,7 @@ public class GalleryActivity extends AppCompatActivity {
         loadImagefromDatabase();
 
         //getting data to recyclerview
-        adaptor = new GalleryAdaptor(GalleryActivity.this,mlist);
+        adaptor = new GalleryAdaptor(GalleryActivity.this, mlist);
         recyclerView.setAdapter(adaptor);
         progressDialog.dismiss();
     }
@@ -80,23 +82,34 @@ public class GalleryActivity extends AppCompatActivity {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    //checking if list is empty or not ..to not make dublicate file while making real time update
+                    if (!mlist.isEmpty()) {
+                        mlist.clear();
+                    }
 
-                //checking if list is empty or not ..to not make dublicate file while making real time update
-                if(!mlist.isEmpty()){
-                    mlist.clear();
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        Gallery gallery = dataSnapshot1.getValue(Gallery.class);
+                        if (gallery != null) {
+                            mlist.add(0, gallery);
+                        } else {
+                            Toast.makeText(GalleryActivity.this, "माफ गर्नुहोस्! \n" +
+                                    "अहिलेको लागि, डाटाबेसमा कुनै गैलरीको डाटा छैन", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                    recyclerView.getAdapter().notifyDataSetChanged();
+
+                } else {
+                    Toast.makeText(GalleryActivity.this, "माफ गर्नुहोस्! \n" +
+                            "अहिलेको लागि, डाटाबेसमा कुनै कार्यक्रमको डेटा", Toast.LENGTH_SHORT).show();
                 }
-
-                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
-                    Gallery gallery = dataSnapshot1.getValue(Gallery.class);
-                    mlist.add(0,gallery);
-
-                }
-                recyclerView.getAdapter().notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(GalleryActivity.this,"Something occured",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "\n" +
+                        "इंटरनेट को प्रॉब्लम भयो", Toast.LENGTH_SHORT).show();
             }
         });
     }

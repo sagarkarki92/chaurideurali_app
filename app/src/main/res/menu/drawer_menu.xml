@@ -6,33 +6,33 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
+            android:checkable="true"
             android:icon="@drawable/ic_home"
-            android:title="Home"
-            android:checkable="true"/>
+            android:title="Home" />
 
         <item
             android:id="@+id/nav_notice"
+            android:checkable="true"
             android:icon="@drawable/ic_notice"
-            android:title="Notice"
-            android:checkable="true"/>
+            android:title="Notice" />
 
         <item
             android:id="@+id/nav_gallery"
+            android:checkable="true"
             android:icon="@drawable/ic_gallary"
-            android:title="Gallery"
-            android:checkable="true"/>
+            android:title="Gallery" />
 
         <item
             android:id="@+id/nav_program"
+            android:checkable="true"
             android:icon="@drawable/ic_program"
-            android:title="Programs"
-            android:checkable="true"/>
+            android:title="Programs" />
 
         <item
             android:id="@+id/nav_wards"
+            android:checkable="true"
             android:icon="@drawable/ic_wards"
-            android:title="Wards"
-            android:checkable="true"/>
+            android:title="Wards" />
 
     </group>
 
@@ -40,15 +40,15 @@
         <menu>
             <item
                 android:id="@+id/nav_aboutus"
+                android:checkable="true"
                 android:icon="@drawable/ic_aboutus"
-                android:title="About Us"
-                android:checkable="true"/>
+                android:title="About Us" />
 
             <item
                 android:id="@+id/nav_contactus"
+                android:checkable="true"
                 android:icon="@drawable/ic_contact"
-                android:title="Contact Us"
-                android:checkable="true"/>
+                android:title="Contact Us" />
         </menu>
     </item>
 </menu>

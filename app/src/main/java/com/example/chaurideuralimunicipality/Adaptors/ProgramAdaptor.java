@@ -24,8 +24,8 @@ public class ProgramAdaptor extends RecyclerView.Adapter<ProgramAdaptor.ProgramV
     private List<Program> mlist;
 
     public ProgramAdaptor(Context mcontext, List<Program> mlist) {
-    this.mcontext = mcontext;
-    this.mlist = mlist;
+        this.mcontext = mcontext;
+        this.mlist = mlist;
 
     }
 
@@ -33,7 +33,7 @@ public class ProgramAdaptor extends RecyclerView.Adapter<ProgramAdaptor.ProgramV
     @Override
     public ProgramViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-        View view = LayoutInflater.from(mcontext).inflate(R.layout.list_item,null);
+        View view = LayoutInflater.from(mcontext).inflate(R.layout.list_item, null);
         return new ProgramViewHolder(view);
     }
 
@@ -58,15 +58,16 @@ public class ProgramAdaptor extends RecyclerView.Adapter<ProgramAdaptor.ProgramV
         return mlist.size();
     }
 
-    public class ProgramViewHolder extends RecyclerView.ViewHolder{
+    public class ProgramViewHolder extends RecyclerView.ViewHolder {
 
-        TextView programtitle,date;
+        TextView programtitle, date;
         LinearLayout linearLayout;
+
         public ProgramViewHolder(@NonNull View itemView) {
             super(itemView);
             programtitle = itemView.findViewById(R.id.title);
             date = itemView.findViewById(R.id.pub_date);
-             linearLayout = itemView.findViewById(R.id.item_list);
+            linearLayout = itemView.findViewById(R.id.item_list);
         }
     }
 }

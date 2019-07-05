@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chaurideuralimunicipality.Activities.ProgramActivity"
+    android:background="#cdcdcd"
     android:orientation="vertical"
-    android:background="#cdcdcd">
+    tools:context="com.example.chaurideuralimunicipality.Activities.ProgramActivity">
 
     <include
         android:id="@+id/program_toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
 
-   <android.support.v7.widget.RecyclerView
-       android:id="@+id/program_recyclerview"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/program_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-   </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

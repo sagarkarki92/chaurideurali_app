@@ -15,7 +15,8 @@ public class Program implements Serializable {
         this.url = url;
     }
 
-    public Program(){}
+    public Program() {
+    }
 
     public Program(String date, String title, String body) {
         this.date = date;

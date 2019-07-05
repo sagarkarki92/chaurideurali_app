@@ -23,14 +23,15 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
     Context mcontext;
     List<Gallery> mlist;   //gallery should have title and image of first index so that, that image could be use as background of gallery
 
-    public GalleryAdaptor(Context mcontext, List<Gallery> mlist){
+    public GalleryAdaptor(Context mcontext, List<Gallery> mlist) {
         this.mcontext = mcontext;
         this.mlist = mlist;
     }
+
     @NonNull
     @Override
     public GalleryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(mcontext).inflate(R.layout.album_card,null);
+        View view = LayoutInflater.from(mcontext).inflate(R.layout.album_card, null);
         return new GalleryViewHolder(view);
     }
 
@@ -45,8 +46,8 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
         galleryViewHolder.album_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mcontext,GalleryDetails.class);
-                intent.putExtra("galleryobject",gallery);
+                Intent intent = new Intent(mcontext, GalleryDetails.class);
+                intent.putExtra("galleryobject", gallery);
                 mcontext.startActivity(intent);
 
             }
@@ -63,6 +64,7 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
         TextView title;
         ImageView thumbnail;
         LinearLayout album_layout;
+
         public GalleryViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.album_name);

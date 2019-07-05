@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout android:id="@+id/drawer_layout"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fitsSystemWindows="true"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:fitsSystemWindows="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar"
-            />
+            layout="@layout/toolbar" />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,9 +35,9 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/teen_dp"
                         android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="@dimen/teen_dp">
 
                         <LinearLayout
                             android:id="@+id/notice"
@@ -56,16 +57,16 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/title_notice"
-                                android:layout_gravity="center_vertical|center_horizontal|center" />
+                                android:layout_gravity="center_vertical|center_horizontal|center"
+                                android:text="@string/title_notice" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/aboutus"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:onClick="showAbout"
                             android:layout_weight="1"
+                            android:onClick="showAbout"
                             android:orientation="vertical">
 
                             <ImageView
@@ -78,9 +79,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|center_horizontal|center"
                                 android:gravity="center_horizontal"
-                                android:text="@string/title_aboutus"
-                                android:layout_gravity="center_vertical|center_horizontal|center"  />
+                                android:text="@string/title_aboutus" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -101,18 +102,18 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|center_horizontal|center"
                                 android:gravity="center_horizontal"
-                                android:text="@string/title_contactus"
-                                android:layout_gravity="center_vertical|center_horizontal|center"  />
+                                android:text="@string/title_contactus" />
                         </LinearLayout>
                     </LinearLayout>
                     <!--to here-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/teen_dp"
                         android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="@dimen/teen_dp">
 
                         <LinearLayout
                             android:id="@+id/gallery"
@@ -132,8 +133,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/title_gallery"
-                                android:layout_gravity="center_vertical|center_horizontal|center" />
+                                android:layout_gravity="center_vertical|center_horizontal|center"
+                                android:text="@string/title_gallery" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -155,9 +156,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|center_horizontal|center"
                                 android:gravity="center_horizontal"
-                                android:text="@string/title_program"
-                                android:layout_gravity="center_vertical|center_horizontal|center" />
+                                android:text="@string/title_program" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -209,10 +210,10 @@
                         android:id="@+id/img_Mayor"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="3"
+                        android:layout_gravity="center"
                         android:layout_marginBottom="10dp"
-                        app:srcCompat="@drawable/mayor"
-                        android:layout_gravity="center"/>
+                        android:layout_weight="3"
+                        app:srcCompat="@drawable/mayor" />
 
                     <TextView
                         android:id="@+id/mayor_name"
@@ -853,12 +854,13 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu"/>
+        app:menu="@menu/drawer_menu" />
 
 </android.support.v4.widget.DrawerLayout>

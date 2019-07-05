@@ -10,7 +10,8 @@ public class Notice implements Serializable {
     private String url;
 
 
-    public Notice(){}  //empty constructor for reading data from database
+    public Notice() {
+    }  //empty constructor for reading data from database
 
     public Notice(String date, String title, String body, String url) {
         this.date = date;
