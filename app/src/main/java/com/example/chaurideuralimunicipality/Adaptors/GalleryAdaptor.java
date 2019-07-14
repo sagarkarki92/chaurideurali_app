@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.chaurideuralimunicipality.Activities.FullScreenActivity;
 import com.example.chaurideuralimunicipality.Activities.GalleryDetails;
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Gallery;
@@ -21,8 +22,9 @@ import java.io.Serializable;
 import java.util.List;
 
 public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryViewHolder> implements Serializable {
+
     Context mcontext;
-    List<Gallery> mlist;   //gallery should have title and image of first index so that, that image could be use as background of gallery
+    List<Gallery> mlist;
 
     public GalleryAdaptor(Context mcontext, List<Gallery> mlist) {
         this.mcontext = mcontext;
@@ -33,50 +35,63 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
                         .build());
     }
 
+//    @NonNull
+//    @Override
+//    public GalleryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+//        View view = LayoutInflater.from(mcontext).inflate(R.layout.photo_card, null);
+//        return new GalleryViewHolder(view);
+//    }
+
+
+
     @NonNull
     @Override
-    public GalleryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(mcontext).inflate(R.layout.album_card, null);
+    public GalleryAdaptor.GalleryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View view = LayoutInflater.from(mcontext).inflate(R.layout.photo_card, null);
         return new GalleryViewHolder(view);
     }
 
-    @Override
     public void onBindViewHolder(@NonNull GalleryViewHolder galleryViewHolder, int position) {
 
         final Gallery gallery = mlist.get(position);
         galleryViewHolder.title.setText(gallery.getTitle());
-        if(mcontext !=null){
-        Picasso.get().load(gallery.getUrls().get(0)).into(galleryViewHolder.thumbnail);
-        System.out.println("here it is from galary activity"+mcontext);
-        //when user clicked one album it should take inside of that album
-        galleryViewHolder.album_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mcontext, GalleryDetails.class);
-                intent.putExtra("galleryobject", gallery);
-                mcontext.startActivity(intent);
+        if (mcontext != null) {
+            Picasso.get().load(gallery.getUrls().get(0)).into(galleryViewHolder.thumbnail);
+            System.out.println("here it is from galary activity" + mcontext);
+            //when user clicked one album it should take inside of that album
+            galleryViewHolder.album_layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(mcontext, GalleryDetails.class);
+                    intent.putExtra("galleryobject", gallery);
+                    mcontext.startActivity(intent);
 
-            }
-        });
+                }
+            });
         }
         //thumbnail keeping decision yet to make
-    }
 
+        }
     @Override
     public int getItemCount() {
-        return mlist.size();
+        return 0;
     }
 
-    public class GalleryViewHolder extends RecyclerView.ViewHolder {
-        TextView title;
-        ImageView thumbnail;
-        LinearLayout album_layout;
+        public class GalleryViewHolder extends RecyclerView.ViewHolder {
 
-        public GalleryViewHolder(@NonNull View itemView) {
-            super(itemView);
-            title = itemView.findViewById(R.id.album_name);
-            thumbnail = itemView.findViewById(R.id.album_thumbnail);
-            album_layout = itemView.findViewById(R.id.album_card_layout);
+            LinearLayout album_layout;
+            TextView title;
+            ImageView thumbnail;
+
+
+            public GalleryViewHolder(@NonNull View itemView) {
+                super(itemView);
+                album_layout = itemView.findViewById(R.id.album_card_layout);
+                thumbnail = itemView.findViewById(R.id.album_thumbnail);
+                title = itemView.findViewById(R.id.album_name);
+
+
+            }
         }
-    }
+
 }
