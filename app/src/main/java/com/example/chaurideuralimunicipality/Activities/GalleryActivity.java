@@ -53,6 +53,7 @@ public class GalleryActivity extends AppCompatActivity {
         //setting up recyclerview
         recyclerView = findViewById(R.id.gallery_recyclerview);
 
+
         recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this,1));
 
         mlist = new ArrayList<>();

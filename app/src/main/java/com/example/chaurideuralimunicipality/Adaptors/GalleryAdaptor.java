@@ -9,10 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 import android.widget.TextView;
 
 import com.example.chaurideuralimunicipality.Activities.FullScreenActivity;
 import com.example.chaurideuralimunicipality.Activities.GalleryDetails;
+
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Gallery;
 import com.squareup.picasso.Picasso;
@@ -20,6 +22,7 @@ import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.List;
+
 
 public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryViewHolder> implements Serializable {
 
@@ -33,6 +36,7 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
                 new Picasso.Builder(this.mcontext)
                         // additional settings
                         .build());
+
     }
 
 //    @NonNull
@@ -46,6 +50,7 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
 
     @NonNull
     @Override
+
     public GalleryAdaptor.GalleryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(mcontext).inflate(R.layout.photo_card, null);
         return new GalleryViewHolder(view);
@@ -71,9 +76,11 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
         }
         //thumbnail keeping decision yet to make
 
+
         }
     @Override
     public int getItemCount() {
+
         return 0;
     }
 
@@ -92,6 +99,7 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
 
 
             }
+
         }
 
 }
