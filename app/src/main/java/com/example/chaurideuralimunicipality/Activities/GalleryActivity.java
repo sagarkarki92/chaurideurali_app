@@ -11,16 +11,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.chaurideuralimunicipality.Adaptors.GalleryAdaptor;
-
 import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Gallery;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,12 +31,10 @@ public class GalleryActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     ProgressDialog progressDialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
-
         //setting up toolbar
         toolbar = findViewById(R.id.gallery_toolbar);
         toolbar.setTitle("Gallery");
@@ -57,59 +52,40 @@ public class GalleryActivity extends AppCompatActivity {
 
         //setting up recyclerview
         recyclerView = findViewById(R.id.gallery_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this, 1));
-
-        Picasso.setSingletonInstance(
-                new Picasso.Builder(this)
-                        // additional settings
-                        .build());
+        recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this,1));
 
         mlist = new ArrayList<>();
-        Toast.makeText(GalleryActivity.this, "लोड हुँदैछ", Toast.LENGTH_SHORT).show();
         loadImagefromDatabase();
 
         //getting data to recyclerview
-        adaptor = new GalleryAdaptor(GalleryActivity.this, mlist);
+        adaptor = new GalleryAdaptor(this,mlist);
         recyclerView.setAdapter(adaptor);
         progressDialog.dismiss();
     }
 
     private void loadImagefromDatabase() {
-        FirebaseApp.initializeApp(this);
+
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Images");
         reference.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    //checking if list is empty or not ..to not make dublicate file while making real time update
-                    if (!mlist.isEmpty()) {
-                        mlist.clear();
-                    }
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        Gallery gallery = dataSnapshot1.getValue(Gallery.class);
-                        if (gallery != null) {
-                            mlist.add(0, gallery);
-                        } else {
-                            Toast.makeText(GalleryActivity.this, "माफ गर्नुहोस्! \n" +
-                                    "अहिलेको लागि, डाटाबेसमा कुनै गैलरीको डाटा छैन", Toast.LENGTH_SHORT).show();
-
-                        }
-                    }
-                    recyclerView.getAdapter().notifyDataSetChanged();
-
-                } else {
-                    Toast.makeText(GalleryActivity.this, "माफ गर्नुहोस्! \n" +
-                            "अहिलेको लागि, डाटाबेसमा कुनै कार्यक्रमको डेटा", Toast.LENGTH_SHORT).show();
+                //checking if list is empty or not ..to not make dublicate file while making real time update
+                if(!mlist.isEmpty()){
+                    mlist.clear();
                 }
+
+                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                    Gallery gallery = dataSnapshot1.getValue(Gallery.class);
+                    mlist.add(0,gallery);
+                }
+                recyclerView.getAdapter().notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(), "\n" +
-                        "इंटरनेट को प्रॉब्लम भयो", Toast.LENGTH_SHORT).show();
+                Toast.makeText(GalleryActivity.this,"Something occured",Toast.LENGTH_SHORT).show();
             }
         });
     }
