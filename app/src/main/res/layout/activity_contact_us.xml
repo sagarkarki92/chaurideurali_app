@@ -53,7 +53,6 @@
                         app:srcCompat="@drawable/contactus" />
 
                     <TextView
-                        android:id="@+id/contact_us"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/teen_dp"
@@ -83,7 +82,6 @@
                         app:srcCompat="@drawable/mail" />
 
                     <TextView
-                        android:id="@+id/contact_us_email"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/teen_dp"

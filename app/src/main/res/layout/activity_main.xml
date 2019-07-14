@@ -40,7 +40,6 @@
                         android:padding="@dimen/teen_dp">
 
                         <LinearLayout
-                            android:id="@+id/notice"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -48,7 +47,6 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageNotice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/people_img"
                                 android:layout_weight="1"
@@ -62,7 +60,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/aboutus"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -70,7 +67,6 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageAboutUs"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/people_img"
                                 android:layout_weight="1"
@@ -85,7 +81,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/contactus"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -93,7 +88,6 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imgcontactus"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/people_img"
                                 android:layout_weight="1"
@@ -116,7 +110,6 @@
                         android:padding="@dimen/teen_dp">
 
                         <LinearLayout
-                            android:id="@+id/gallery"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -124,7 +117,6 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/icon_gallery"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/people_img"
                                 android:layout_weight="1"
@@ -138,7 +130,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/program"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -147,7 +138,6 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/icon_program"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/people_img"
                                 android:layout_weight="1"
@@ -162,7 +152,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/ward"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -172,7 +161,6 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/imageContactUs"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/people_img"
                                 android:layout_weight="1"
@@ -191,7 +179,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/jana_pd_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -207,7 +194,6 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/img_Mayor"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
@@ -216,7 +202,6 @@
                         app:srcCompat="@drawable/mayor" />
 
                     <TextView
-                        android:id="@+id/mayor_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -226,7 +211,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/mayor_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -235,7 +219,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/mayor_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -252,14 +235,12 @@
 
 
                     <ImageView
-                        android:id="@+id/imageChairman"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         app:srcCompat="@drawable/chairman" />
 
                     <TextView
-                        android:id="@+id/vice_president_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -269,7 +250,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/vc_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -278,7 +258,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/vc_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -294,7 +273,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/pd_group"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
@@ -305,7 +283,6 @@
                         android:textSize="24dp" />
 
                     <ImageView
-                        android:id="@+id/pd1_image"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -313,7 +290,6 @@
                         android:src="@drawable/broken" />
 
                     <TextView
-                        android:id="@+id/pd1_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -323,7 +299,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd1_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -341,7 +316,6 @@
 
 
                     <ImageView
-                        android:id="@+id/pd2_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -349,7 +323,6 @@
                         android:src="@drawable/broken" />
 
                     <TextView
-                        android:id="@+id/pd2_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -359,7 +332,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd2_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -368,7 +340,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd2_emial"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -377,7 +348,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd2_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -395,7 +365,6 @@
 
 
                     <ImageView
-                        android:id="@+id/pd3_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -404,7 +373,6 @@
                         app:srcCompat="@drawable/salikramnepal" />
 
                     <TextView
-                        android:id="@+id/pd3_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -414,7 +382,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd3_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -423,7 +390,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd3_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -440,14 +406,12 @@
 
 
                     <ImageView
-                        android:id="@+id/pd4_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         app:srcCompat="@drawable/dhurbaparsaad" />
 
                     <TextView
-                        android:id="@+id/pd4_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -457,7 +421,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd4_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -466,7 +429,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd4_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -475,7 +437,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd4_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -492,14 +453,12 @@
 
 
                     <ImageView
-                        android:id="@+id/pd5_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         app:srcCompat="@drawable/tejghising" />
 
                     <TextView
-                        android:id="@+id/pd5_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -509,7 +468,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd5_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -518,7 +476,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd5_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -527,7 +484,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd5_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -544,7 +500,6 @@
 
 
                     <ImageView
-                        android:id="@+id/pd6_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -552,7 +507,6 @@
                         app:srcCompat="@drawable/anilkumarsharma" />
 
                     <TextView
-                        android:id="@+id/pd6_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -562,7 +516,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd6_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -571,7 +524,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd6_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -580,7 +532,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd6_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -597,7 +548,6 @@
 
 
                     <ImageView
-                        android:id="@+id/pd7_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -605,7 +555,6 @@
                         android:src="@drawable/broken" />
 
                     <TextView
-                        android:id="@+id/pd7_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -615,7 +564,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd7_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -624,7 +572,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd7_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -641,7 +588,6 @@
 
 
                     <ImageView
-                        android:id="@+id/pd8_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -649,7 +595,6 @@
                         android:src="@drawable/broken" />
 
                     <TextView
-                        android:id="@+id/pd8_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -659,7 +604,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd8_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -675,14 +619,12 @@
 
 
                     <ImageView
-                        android:id="@+id/pd9_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:src="@drawable/broken" />
 
                     <TextView
-                        android:id="@+id/pd9_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -692,7 +634,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd9_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -710,7 +651,6 @@
 
 
                     <ImageView
-                        android:id="@+id/pd10_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -718,7 +658,6 @@
                         app:srcCompat="@drawable/pramilasahayak" />
 
                     <TextView
-                        android:id="@+id/pd10_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -728,7 +667,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd10_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -737,7 +675,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd10_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -746,7 +683,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd10_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -763,14 +699,12 @@
 
 
                     <ImageView
-                        android:id="@+id/pd11_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         app:srcCompat="@drawable/nirmalbabukhadka" />
 
                     <TextView
-                        android:id="@+id/pd11_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -780,7 +714,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd11_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -789,7 +722,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd11_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -798,7 +730,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd11_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -815,7 +746,6 @@
 
 
                     <ImageView
-                        android:id="@+id/pd12_img"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -823,7 +753,6 @@
                         android:src="@drawable/broken" />
 
                     <TextView
-                        android:id="@+id/pd12_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -833,7 +762,6 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/pd12_post"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
@@ -842,7 +770,6 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/pd12_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"

@@ -4,8 +4,6 @@
     <string name="website">http://chaurideuralimun.gov.np</string>
     <string name="facebook_link">https://www.facebook.com/chaurideuralimun</string>
 
-    <string name="title">14sp</string>
-
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
@@ -95,7 +93,6 @@
     <string name="ward_2">वडा नं. २ नाग्रे गगर्चे</string>
     <!--3-->
 
-    <string name="ward_3">वडा नं. ३ माझीफेदा</string>
     <!--4-->
     <string name="ward_4">वडा नं. ४ धुसेनी</string>
     <!--5-->
@@ -255,13 +252,10 @@
     <string name="name_95">हसनी तामाङ</string>
     <string name="number_95">९८०८००६८४५</string>
 
-    <string name="secondheader">पदाधिकारी</string>
     <!--pd details-->
     <!--pd1-->
     <string name="pd1_name">बलराम लम्साल</string>
     <string name="pd1_post">प्रमुख प्रशासकीय अधिकृत</string>
-    <string name="pd1_email">Not Availabel</string>
-    <string name="pd1_number">Not Availabel</string>
     <!--pd2-->
 
     <string name="pd2_name">महान दास लामा</string>
@@ -272,7 +266,6 @@
 
     <string name="pd3_name">सालिकराम नेपाल</string>
     <string name="pd3_post">ना.सु</string>
-    <string name="pd3_email">Not Availabel</string>
 
     <string name="pd3_number">९८४१५०२९४१</string>
     <!--pd4-->
@@ -293,8 +286,6 @@
     <!--pd7-->
     <string name="pd7_name">विजय कुमार थापा</string>
     <string name="pd7_post">प.स्वा.प्रा</string>
-
-    <string name="pd7_email">Not Availabel</string>
 
     <string name="pd7_number">९८४३४९३१९०</string>
     <!--pd8-->
@@ -359,10 +350,8 @@
     <!--p12-->
     <string name="pd12_name">कृष्‍ण भण्डारी</string>
     <string name="pd12_post">सव इन्जिनियर</string>
-    <string name="pd12_email">Not Availabel</string>
     <string name="pd12_number">९८४१३२२४१२</string>
     <string name="todo">TODO</string>
-    <string name="contact_number_here">Contact number here !!</string>
     <string name="jnp">जन प्रतिनिधि</string>
 </resources>
 

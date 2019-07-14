@@ -52,6 +52,8 @@ public class GalleryActivity extends AppCompatActivity {
 
         //setting up recyclerview
         recyclerView = findViewById(R.id.gallery_recyclerview);
+
+
         recyclerView.setLayoutManager(new GridLayoutManager(GalleryActivity.this,1));
 
         mlist = new ArrayList<>();
@@ -59,6 +61,7 @@ public class GalleryActivity extends AppCompatActivity {
 
         //getting data to recyclerview
         adaptor = new GalleryAdaptor(this,mlist);
+
         recyclerView.setAdapter(adaptor);
         progressDialog.dismiss();
     }
@@ -71,6 +74,7 @@ public class GalleryActivity extends AppCompatActivity {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 //checking if list is empty or not ..to not make dublicate file while making real time update
                 if(!mlist.isEmpty()){
                     mlist.clear();
@@ -81,6 +85,7 @@ public class GalleryActivity extends AppCompatActivity {
                     mlist.add(0,gallery);
                 }
                 recyclerView.getAdapter().notifyDataSetChanged();
+
             }
 
             @Override
