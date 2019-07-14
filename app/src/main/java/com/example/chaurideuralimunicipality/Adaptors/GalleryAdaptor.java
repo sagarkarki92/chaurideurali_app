@@ -16,6 +16,7 @@ import com.example.chaurideuralimunicipality.R;
 import com.example.chaurideuralimunicipality.model.Gallery;
 import com.squareup.picasso.Picasso;
 
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -26,6 +27,10 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
     public GalleryAdaptor(Context mcontext, List<Gallery> mlist) {
         this.mcontext = mcontext;
         this.mlist = mlist;
+        Picasso.setSingletonInstance(
+                new Picasso.Builder(this.mcontext)
+                        // additional settings
+                        .build());
     }
 
     @NonNull
@@ -40,8 +45,9 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
 
         final Gallery gallery = mlist.get(position);
         galleryViewHolder.title.setText(gallery.getTitle());
+        if(mcontext !=null){
         Picasso.get().load(gallery.getUrls().get(0)).into(galleryViewHolder.thumbnail);
-
+        System.out.println("here it is from galary activity"+mcontext);
         //when user clicked one album it should take inside of that album
         galleryViewHolder.album_layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +58,7 @@ public class GalleryAdaptor extends RecyclerView.Adapter<GalleryAdaptor.GalleryV
 
             }
         });
+        }
         //thumbnail keeping decision yet to make
     }
 

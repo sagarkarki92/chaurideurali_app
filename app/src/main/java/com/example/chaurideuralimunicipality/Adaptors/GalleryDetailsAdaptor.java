@@ -28,6 +28,7 @@ public class GalleryDetailsAdaptor extends RecyclerView.Adapter<GalleryDetailsAd
     @NonNull
     @Override
     public GalleryDetailsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        System.out.println("here it is kjdfhasjkdhflajdfhlasj"+mcontext);
         View view = LayoutInflater.from(mcontext).inflate(R.layout.photo_card, null);
         return new GalleryDetailsViewHolder(view);
     }
@@ -35,12 +36,13 @@ public class GalleryDetailsAdaptor extends RecyclerView.Adapter<GalleryDetailsAd
     @Override
     public void onBindViewHolder(@NonNull GalleryDetailsViewHolder galleryDetailsViewHolder, int i) {
         final int position = i;
-        Picasso.get().load(gallery.getUrls().get(i)).into(galleryDetailsViewHolder.photo);
+//        Picasso.get().load(gallery.getUrls().get(i)).into(galleryDetailsViewHolder.photo);
         galleryDetailsViewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mcontext, FullScreenActivity.class);
                 intent.putExtra("imageuri", gallery.getUrls().get(position));
+                intent.putExtra("imagecollection",gallery);
                 mcontext.startActivity(intent);
 
             }
